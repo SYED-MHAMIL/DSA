@@ -83,26 +83,26 @@
 
 
 
+
+# ++++++++++++++++++  LEFT METHOD   +++++++++++++++++++++++
+
 # def in_palac_rotation(arr,k):
 #     n=len(arr)
 #     k =k%n
 #     def rotater(start,end):
-#         #[1,2,3,4,5,6,7] ----> [5,6,7,1,2,3,4]
-#         #[1,2,3,4,7,6,5]
-#         #[5,6,7,4,3,2,1]
-      
-          
+ 
+                
 #         while start<end:
 #                 arr[end],arr[start] =arr[start],arr[end]
 #                 start+=1
 #                 end-=1
-#     rotater(k+1,n-1)
+#     rotater(0,k-1)
+#     rotater(k,n-1)
 #     rotater(0,n-1)
-#     rotater(k+1,n-1)
     
 #     return arr    
 
-# print(in_palac_rotation([1,2,3,4,5,6,7,8,9],3))
+# print(in_palac_rotation([1,2,3,4,5,6,7],3))
 
 
 
@@ -132,7 +132,7 @@
 #     reverse(k, n - 1)        # Reverse the rest
 #     return arr
 
-# print(rotate_right([1,2,3,4,5,6,7,8],3))
+# print(rotate_right([1,2,3,4,5,6,7,8,9],3))
 
 
 
