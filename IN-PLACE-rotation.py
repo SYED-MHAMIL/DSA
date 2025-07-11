@@ -20,6 +20,7 @@
 #     k =k%n
 #     def rotate(start,end):
 #         # [1,2,3,4,5,6]
+#         # 
 #         # stp1 : [6,5,4,3,2,1]
 #         # stp2 : [4,5,6,3,2,1]
 #         while start <end: # strt:0,1,2,3     end:5,4,3,2
@@ -35,11 +36,28 @@
 # reverse([1,2,3,4,5,6],3)
 
 
+def in_palac_rotation(arr,k):
+    n=len(arr)
+    k =k%n
+    def rotater(start,end):
+        #[1,2,3,4,5,6,7] ----> [5,6,7,1,2,3,4]
+        #[5,6,7,4,1,2,3]
+        #[5,6,7,4,3,2,1]
+        #[5,6,7,1,2,3,4]
+        while start>end:
+                print(arr[-3])
+                arr[end],arr[start] =arr[start],arr[end]
+                start+=1
+                end-=1
 
+    rotater(0,-k)
+    return arr
+            
+    
 
+print(in_palac_rotation([1,2,3,4,5,6,7],3))
 
-
-# just   reverse
+# just  reverse
 
 
 # def rotate_right(arr, k):
@@ -56,6 +74,7 @@
 #     reverse(0, k - 1)        # Reverse first k elements
 #     reverse(k, n - 1)        # Reverse the rest
 #     return arr
+
 # print(rotate_right([1,2,3,4,5,6,7],3))
 
 
@@ -111,5 +130,12 @@
 #     print(f'array : {arr}')       
 
 # reverse([1,2,3,4,5,6,7],4)
+
+
+
+
+
+
+# ===============================   SECOND METHOD ======================
 
 
