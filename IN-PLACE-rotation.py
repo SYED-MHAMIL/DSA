@@ -53,32 +53,66 @@
 #                 end-=1
 
 #     rotater(k-1,n-1)
-#     rotater(k+1,n-1)
+#     # rotater(k+1,n-1)
 #     return arr
+# print(in_palac_rotation([1,2,3,4,5,6,7,8],3))
             
-def in_palac_rotation(arr,k):
-    n=len(arr)
-    k =k%n
-    def rotater(start,end):
-        #[1,2,3,4,5,6,7] ----> [5,6,7,1,2,3,4]
-        #start: 
-      # stp=1 #[5,6,7,4,1,2,3]
-      # stp=2 #[5,6,7,4,3,2,1]
-      # stp=1 #[5,6,7,1,2,3,4]
-        while start<end:
-                arr[end],arr[start] =arr[start],arr[end]
-                start+=1
-                end+=1
-                if end == 0:
-                   break
+# def in_palac_rotation(arr,k):
+#     n=len(arr)
+#     k =k%n
+#     def rotater(start,end):
+#         #[1,2,3,4,5,6,7] ----> [5,6,7,1,2,3,4]
+        
 
-    rotater(-n,-k)
-    rotater(-k,-k+2)
-    rotater(-k-1,)
-    #  4-2-3-1
-    return arr    
+#         while start<end:
+#                 arr[end],arr[start] =arr[start],arr[end]
+                
 
-print(in_palac_rotation([1,2,3,4,5,6,7],3))
+#     # rotater(-n,-k)
+#     # rotater(-k,-k+2)
+#     # rotater(-k-1,)
+#     return arr    
+
+# print(in_palac_rotation([1,2,3,4,5,6,7],3))
+
+
+
+
+
+  # ++++++++++++++++++   THIRD  EXAPMLWE         +++++++++++++++
+
+
+
+# def in_palac_rotation(arr,k):
+#     n=len(arr)
+#     k =k%n
+#     def rotater(start,end):
+#         #[1,2,3,4,5,6,7] ----> [5,6,7,1,2,3,4]
+#         #[1,2,3,4,7,6,5]
+#         #[5,6,7,4,3,2,1]
+      
+          
+#         while start<end:
+#                 arr[end],arr[start] =arr[start],arr[end]
+#                 start+=1
+#                 end-=1
+#     rotater(k+1,n-1)
+#     rotater(0,n-1)
+#     rotater(k+1,n-1)
+    
+#     return arr    
+
+# print(in_palac_rotation([1,2,3,4,5,6,7,8,9],3))
+
+
+
+
+
+
+
+
+
+
 
 # just  reverse
 
@@ -98,7 +132,7 @@ print(in_palac_rotation([1,2,3,4,5,6,7],3))
 #     reverse(k, n - 1)        # Reverse the rest
 #     return arr
 
-# print(rotate_right([1,2,3,4,5,6,7],3))
+# print(rotate_right([1,2,3,4,5,6,7,8],3))
 
 
 
