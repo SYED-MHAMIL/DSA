@@ -10,15 +10,20 @@ print(a) # why not all change because number is immubatable
 
 
 
+# stock_prices =  [56,4,32,2,8,9,12,14]
+#                # 1 ,2, 3,4,5 ,6 ,7 
+# def maximumProfit(stock_prices):
+#     min_price = float("inf") # 1M
+#     max_profit = 0
+#     for price in stock_prices:
+#         if price < min_price:
+#             min_price =price 
+#         else:
+#             profit = price - min_price
+#             max_profit =max(max_profit,profit)
 
-def maximumProfit(stock_prices):
-    min_price = float("inf") # 1M
-    max_profit = 0
-    for price in stock_prices:
-        if price < min_price:
-            min_price= price
-        else:
-            profit = price - min_price
-            max_profit = max(max_profit,price)
-    return  max_profit         
+#     return max_profit
 
+
+
+    
