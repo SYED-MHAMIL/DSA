@@ -36,23 +36,23 @@
 # Since all fruits are successfully placed, we return 0.
 
 
-fruits = [1,3,5]
-baskets= [5,8,3]
+# fruits = [1,3,5]
+# baskets= [5,8,3]
 
 
-used = [False] * len(baskets)
-count = 0
+# used = [False] * len(baskets)
+# count = 0
 
-for i in fruits:
-    placed = False
-    for j in range(len(baskets)):
-        if not used[j] and i <= baskets[j]:
-            placed = True  # ✅ Correct spelling
-            used[j] = True
-            break
-    if not placed:
-        count += 1
+# for i in fruits:
+#     placed = False
+#     for j in range(len(baskets)):
+#         if not used[j] and i <= baskets[j]:
+#             placed = True  # ✅ Correct spelling
+#             used[j] = True
+#             break
+#     if not placed:
+#         count += 1
 
-print(count)
+# print(count)
 
 
