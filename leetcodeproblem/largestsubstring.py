@@ -104,7 +104,7 @@ def pointer_method(s):
         res = max(res,len(charSet))
         
     return res
-print(pointer_method("pwwwrst"))
+# print(pointer_method("pwwwrst"))
 
 # def pointer_method(s):
 #     # s = "pwwk"
@@ -125,25 +125,22 @@ print(pointer_method("pwwwrst"))
 
 
 
+# ***************************************
+#    sliding window (optimaL Way )
+#******************************************
 
 
+def lenghtoflargestsubsstring(s):
+    l=0
+    res =0 
+    obj = {}
+#   s ='abbbcd'
+    for r in range(len(s)):
+        if s[r] in obj:
+            l = max(obj[s[r]]+1,l)
+        obj[s[r]]= r   
+        res = max(res,r-l+1)
 
+    return res
 
-
-
-
-
-# class Solution:
-#     def lengthOfLongestSubstring(self, s: str) -> int:
-#         charSet = set()
-#         l = 0   
-#         res = 0
-        # reaxe
-
-#         for r in range(len(s)):
-#             while s[r] in charSet:
-#                 charSet.remove(s[l])
-#                 l += 1
-#             charSet.add(s[r])
-#             res = max(res, r - l + 1)
-#         return res
+print(lenghtoflargestsubsstring("abbbcd"))
