@@ -57,25 +57,62 @@
 #           Two pointer  WAY just inhaance code
 # +++++++++++++++++++++++++++++++++++++++++++++++
 
+# def twoSum(arr, target):
+#     # store original indices before sorting
+#     indexed_arr = list(enumerate(arr))
+#     indexed_arr.sort(key=lambda x: x[1])
 
-def twoSum(arr, target):
-    # store original indices before sorting
-    indexed_arr = list(enumerate(arr))
-    indexed_arr.sort(key=lambda x: x[1])
+#     left = 0
+#     right = len(arr) - 1
 
-    left = 0
-    right = len(arr) - 1
-
-    while left < right:
-        sum_val = indexed_arr[left][1] + indexed_arr[right][1]
-        if sum_val == target:
+#     while left < right:
+#         sum_val = indexed_arr[left][1] + indexed_arr[right][1]
+#         if sum_val == target:
             
-            return [min(indexed_arr[left][0],indexed_arr[right][0]), max(indexed_arr[right][0],indexed_arr[left][0])]
-        elif sum_val < target:
-            left += 1
-        else:
-            right -= 1
+#             return [min(indexed_arr[left][0],indexed_arr[right][0]), max(indexed_arr[right][0],indexed_arr[left][0])]
+#         elif sum_val < target:
+#             left += 1
+#         else:
+#             right -= 1
 
-print(twoSum([4, 5, 6, 3], 8))  # Output: [0, 1]
+# print(twoSum([4, 5, 6, 3], 8))  # Output: [0, 1]
+
+# ==================================================
+        #    Two sum using hash table
+# ==================================================
 
 
+
+
+
+
+def twoSum(arr,target):
+    hash_table = []
+    # res= []
+    for i in range(len(arr)):
+        result = target - arr[i]
+        if  result in hash_table:
+            index =arr.index(result)
+            res  = [index,i]
+            return res
+            # break
+        hash_table.append(arr[i])
+        
+    
+
+
+print(twoSum([16,4,23,8,15,42,1,2],19))
+
+
+
+def twoSum(arr,target):
+
+    for i in range(len(arr)):
+        result = target - arr[i]
+        if  result in arr:
+            index =arr.index(result)
+            res  = [i,index]
+            return res
+    
+
+print(twoSum([2,3,5,14],19))
