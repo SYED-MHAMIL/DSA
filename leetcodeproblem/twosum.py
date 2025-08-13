@@ -87,8 +87,8 @@
 
 
 def twoSum(arr,target):
-    hash_table = []
     # res= []
+    hash_table= []
     for i in range(len(arr)):
         result = target - arr[i]
         if  result in hash_table:
@@ -115,4 +115,28 @@ def twoSum(arr,target):
             return res
     
 
-print(twoSum([2,3,5,14],19))
+# print(twoSum([2,3,5,14],19))
+
+
+
+# ==================================================
+        #    Two sum using sorting
+# ==================================================
+
+def twoSum1(arr,target):
+    sorted_Array = list(enumerate(arr))
+    sorted_Array.sort(key= lambda x:x[1])
+    left= 0 
+    right= len(arr)-1
+    while right > left :
+        target_value_get = sorted_Array[left][1] + sorted_Array[right][1]
+        if target == target_value_get:
+            return [min(sorted_Array[left][0],sorted_Array[right][0]), max(sorted_Array[left][0],sorted_Array[right][0])]
+        elif target > target_value_get:
+            left+=1
+        else:
+            right-=1
+#       1,2,4,5,8
+print(twoSum1([4,5,8,2,1],10))
+        
+
