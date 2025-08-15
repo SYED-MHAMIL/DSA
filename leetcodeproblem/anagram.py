@@ -68,3 +68,24 @@ def checkAnagramSet(s,t):
 
 
 
+
+
+# ============================= =========================
+#          Through array list ---> method
+# =================================================
+
+# def anagram(s,t):
+#     if len(s) != len(t):
+#        return False
+#     # s= 'aab'   ,  t = 'cba'
+#     arr = [0]*26
+#     for i in range(len(s)):
+#         arr[ord(s[i]) - ord('a')]+=1
+#         arr[ord(t[i]) - ord('a')]-=1 
+    
+#     for i in arr:
+#         if i != 0:
+#           return False
+#     return True         
+
+# print(anagram('aab','aab'))
