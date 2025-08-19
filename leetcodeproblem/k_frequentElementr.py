@@ -28,10 +28,26 @@
 
 
 # ***************************************************************
-#                   Brute force
+#                Sorting
 # ***************************************************************
 
 
+
+
+
+
+# def k_frequency(arr,k):
+# # Input: nums = [1,2,2,3,3,3], k = 2
+     
+#     #  arr =[]
+#     obj = {}
+#     for i in range(len(arr)):
+#         obj[arr[i]]= obj.get(arr[i],0) +1 
+
+#     sorted_arr = [key for key,val in sorted(obj.items(),reverse=True,key=lambda x:x[1])][:k]
+#     return sorted_arr
+
+# k_frequency([1,2,2,4,4,3,3,3],k = 2)     
 
 
 
@@ -44,8 +60,120 @@ def k_frequency(arr,k):
     for i in range(len(arr)):
         obj[arr[i]]= obj.get(arr[i],0) +1 
 
-    sorted_arr = [key for key,val in sorted(obj.items(),reverse=True,key=lambda x:x[1])][:k]
-    return sorted_arr
+    # sorted_arr = [key for key,val in sorted(obj.items(),reverse=True,key=lambda x:x[1])][:k]
+    sorted_items = sorted(obj.items(), key=lambda x: (-x[1], x[0]))
+    
+    #  if kth grather than sorted_items in that case we will return whole list 
+    if k >len(sorted_items):
+           return [ num for num,v in sorted_items]
+    print(sorted_items)
+    kth_freq =sorted_items[k-1][1]
+    return [num for num,f in sorted_items if f >= kth_freq]
+    
+# print(k_frequency([1,2,2,4,4,3,3,3,5,5,5,8,8,8,8],3)) 
 
-k_frequency([1,2,2,3,3,3],k = 2)     
+
+
+
+# ***************************************************************
+#          +++++++++++++    min-heap    +++++++++
+# ***************************************************************
+
+
+import heapq
+
+def frequent_kth_element(arr,k):
+    # arr = 1,1,3,3,3,5,5,7,7
+    obj = {}
+    for i in arr:
+        obj[i] = obj.get(arr[i],0) +1
+    
+    heap = []
+    for key in obj.keys():
+        heapq.heappush(heap,(obj[key],key))
+        if len(heap) > k:
+           heapq.heappop(heap)
+        
+    res = []
+    for _ in range(k):
+        res.append(heapq.heappop(heap)[1])
+        
+    return res
+            
+        
+
+# print(frequent_kth_element([1,1,3,3,3,5,5,7,7],2))
+
+
+
+
+# ***************************************************************
+#     ++++++++++    optimize way- bucket solution    +++++++++
+# ***************************************************************
+
+# def freq_kth_element(arr,k):
+#     obj = {}
+#     freq= [[] for i in range(len(arr)+1)]
+#     for i in arr:
+#        obj[i] = obj.get(i,0)+1
+
+#     for num,v in obj.items():
+#         freq[v].append(num)
+#     res = []
+#     for i in range(len(freq) - 1, 0, -1):
+#         for num in freq[i]: 
+#             res.append(num)
+#             if len(res) == k:
+#                 return res
+#     return res
+        
+# print(freq_kth_element([1,1,3,3,3,5,5,7,7],2))
+
+         
+
+# [[1],[2,3,4]]
+
+
+
+
+
+
+# ***************************************************************
+#     ++++++++++    optimize way- bucket solution BOTH WAY CORRECT    +++++++++
+# ***************************************************************
+
+
+
+
+
+
+def freq_kth_element(arr,k):
+    obj = {}
+    bucket= [[] for i in range(len(arr)+1)]
+    for i in arr:
+       obj[i] = obj.get(i,0)+1
+
+    for num,v in obj.items():
+        bucket[v].append(num)
+    res = []
+     
+    for j in range(len(arr) -1 , 0 , -1 ):
+        for nums in bucket[j]:
+            res.append(nums)
+        if len(res) >= k:
+           kth_freq= j
+           break
+        
+    return res
+
+
+    
+
+
+
+
+        
+print(freq_kth_element([1,1,3,3,3,5,5,7,7,8,9]))
+
+         
 
