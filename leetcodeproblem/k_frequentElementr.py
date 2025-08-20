@@ -68,7 +68,7 @@ def kthFreqby_sorting(arr,k):
 
     # print(sorted_item)
 
-print(kthFreqby_sorting([1,1,2,2,3,3,3,5,5,7,7,7],4))
+# print(kthFreqby_sorting([1,1,2,2,3,3,3,5,5,7,7,7],4))
 
     
 
@@ -127,10 +127,63 @@ def frequent_kth_element(arr,k):
         res.append(heapq.heappop(heap)[1])
         
     return res
-            
-        
-
+               
 # print(frequent_kth_element([1,1,3,3,3,5,5,7,7],2))
+
+
+# ****************************************************
+ #        kth freqncy  uing min heap  
+# ****************************************************
+
+def kth_freq_minheap(arr,k):
+
+    obj= {}
+    for i in arr:
+        obj[i] =1+ obj.get(i,0)
+    
+    sorted_items = sorted(obj.items(), key=lambda x: (-x[1], x[0]))
+    heap = []
+
+    for num,f in sorted_items:
+        kth = sorted_items[k-1][1]
+        heapq.heappush(heap,(f,num))
+        print('heap',heap)
+        if len(heap) > k:
+           heapq.heappop(heap)
+    return [number for fr,number in heap]
+# print(kth_freq_minheap([1,2,2,8,8,8,4,4],2))    
+
+
+
+import heapq
+
+def kth_freq_minheap(arr, k):
+    obj = {}
+    for i in arr:
+        obj[i] = 1 + obj.get(i, 0)
+    
+    heap = []
+    for num, f in obj.items():
+        heapq.heappush(heap, (f, num))
+        if len(heap) > k:
+            heapq.heappop(heap)
+    
+    # The kth largest frequency = smallest freq in heap now
+    kth_freq = heap[0][0]
+    print(heap)
+
+    # Collect all numbers with freq >= kth_freq
+    result = [num for num, f in obj.items() if f >= kth_freq]
+    return result
+
+print(kth_freq_minheap([1,2,2,8,8,8,4,4,9,9], 2))
+
+
+
+
+
+
+
 
 
 
@@ -191,7 +244,8 @@ def freq_kth2_element(arr,k):
         if len(res) >= k :
             break
     
-    return res
+    return res 
+
         
 
 
