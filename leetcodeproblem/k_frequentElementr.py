@@ -23,15 +23,9 @@
 
 
 
-
-
-
-
 # ***************************************************************
 #                Sorting
 # ***************************************************************
-
-
 
 
 
@@ -48,6 +42,40 @@
 #     return sorted_arr
 
 # k_frequency([1,2,2,4,4,3,3,3],k = 2)     
+
+
+# **************************************************************
+#          all kth element
+# **************************************************************
+
+
+def kthFreqby_sorting(arr,k):
+    # arr = 1,1,2,2,3,3,3,5,5,7,7,7
+    obj = {}
+    for i in arr:
+        obj[i] =1 + obj.get(i,0) 
+
+    sorted_item =sorted(obj.items(),key=lambda x:(-x[1],x[0]))
+    
+    if len(arr) <k:
+       return [x for x,y in sorted_item] 
+    print(obj)
+    print(sorted_item)
+
+    kth_freq = sorted_item[k-1][1]
+    return [x for x,f in sorted_item if f>=kth_freq ] 
+
+
+    # print(sorted_item)
+
+print(kthFreqby_sorting([1,1,2,2,3,3,3,5,5,7,7,7],4))
+
+    
+
+
+
+
+
 
 
 
@@ -147,33 +175,28 @@ def frequent_kth_element(arr,k):
 
 
 
-def freq_kth_element(arr,k):
+def freq_kth2_element(arr,k):
     obj = {}
-    bucket= [[] for i in range(len(arr)+1)]
     for i in arr:
-       obj[i] = obj.get(i,0)+1
+        obj[i] = obj.get(i,0) +1
 
-    for num,v in obj.items():
-        bucket[v].append(num)
-    res = []
-     
-    for j in range(len(arr) -1 , 0 , -1 ):
-        for nums in bucket[j]:
-            res.append(nums)
-        if len(res) >= k:
-           kth_freq= j
-           break
-        
-    return res
-
-
+    bucket = [[] for _ in range(len(arr) +1)]    
+    for nums,f in obj.items():
+        bucket[f].append(nums)
     
-
-
-
-
+    res = []
+    for j in range(len(arr)-1, 0 , -1):
+        for num in bucket[j]:
+            res.append(num)
+        if len(res) >= k :
+            break
+    
+    return res
         
-print(freq_kth_element([1,1,3,3,3,5,5,7,7,8,9]))
+
+
+    # print(bucket)    
+# print(freq_kth2_element([1,1,3,3,3,5,5,7,7,8,9],2))
 
          
 
