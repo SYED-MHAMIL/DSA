@@ -10,7 +10,7 @@ class Solution:
     def groupAnagrams(self, strs ):
         arr = []
         # Input: strs = ["eat","tea","tan","ate","nat","bat"]
-# Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+# Output: [["bat"],["   ","tan"],["ate","eat","tea"]]
         for i in range(len(strs)):
             arr2=[]
             
@@ -37,7 +37,7 @@ def groupAnagram(strs):
     arr= []
     for i in range(len(strs)):
         word= strs[i]
-        sorted_v = "".join(sorted(strs[i]))
+        sorted_v = "".join(sorted(word))
         # exists = any(sorted_v in ar for ar in arr)
         idx=next((i for i,g in enumerate(arr) if ''.join(sorted(g[0])) ==sorted_v  ),-1)
 
@@ -45,7 +45,7 @@ def groupAnagram(strs):
             arr[idx].append(word)
         else:
             arr.append([word])
-    return arr
+        return arr
 # print(groupAnagram(['']))
 
 
@@ -140,4 +140,12 @@ def analyAnagramsgroup(strs):
         
 
 print(analyAnagramsgroup(["eat","tea","tan","ate","nat","bat"]))     
+        
+
+
+
+
+
+
+
         
