@@ -1,4 +1,4 @@
-# most optimize way
+    # most optimize way
 
 # nums = [1,2,3,4]
 def exceptAllmultiple(str_Arr):
@@ -44,5 +44,7 @@ def exceptAllmultiple1(str_Arr):
     return res
 
 print(exceptAllmultiple1([1,2,4,6]))
+
+
 
 
