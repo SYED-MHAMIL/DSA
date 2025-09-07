@@ -9,7 +9,7 @@ from collections import OrderedDict
 
 def longestwithBrute(strs):
     max_val = 0
-   # Input: strs = "zxyzxyz"
+   # Input: strs = "zxzzxyz"
     for i in range(len(strs)):
         hash = set()
         for j in range(i,len(strs)):
@@ -50,19 +50,18 @@ def longestwithBrute(strs):
 
 
 
+
 def longestwithPoint2(strs):
     res= set()
     max_len = 0
     l =0 
-    for i in  range(len(strs)):
+    for i in range(len(strs)):
         while strs[i] in res:
-            res.remove(strs[l])
+            res.remove(strs[l])        
             l+=1
         res.add(strs[i])
         max_len = max(max_len,len(res))
 
     return max_len
 
-
-    
 print(longestwithPoint2('geekee'))
