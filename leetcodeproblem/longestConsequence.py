@@ -19,25 +19,76 @@ def consequetiveSequence(arr):
 #  optimize way to solve this 
 
 
+
 def conseSequenceOptimize(arr):
     setter = set(arr)
     print(setter)
     seq_start = 0
-    res = []
+    count = 0 
     for i in setter:
         exits = i-1
         if not exits in setter:
             seq_start = i
-            print('start ele',seq_start) 
+            print('start sequence',seq_start) 
             break
-    res.append(seq_start)
+    count+=1
+
     previos = seq_start
-
-    for i in range(len(arr)):
+    while previos+1 in setter:
         previos+=1
+        count+=1
+    return count
 
-        if previos in setter:
-            res.append(previos)
-    return len(res)
+# print(conseSequenceOptimize([100, 4, 200, 1, 3, 2]))
 
-print(conseSequenceOptimize([22,40,2,20,4,5,3]))
+
+
+# *********************************************************************************
+#                            More optimiize way
+# **********************************************************************************
+
+
+# def conseSequenceOptimize1(arr):
+#     setter = set(arr)
+#     print(setter)
+#     longest = 0 
+#     for i in setter:
+#         count = 0 
+#         exits = i-1 
+#         if not exits in setter:
+#             seq_start = i
+#             print('start sequence',seq_start) 
+#             count+=1
+
+#             previos = seq_start
+#             while previos+1 in setter:
+#                 previos+=1
+#                 count+=1
+#             longest = max(longest,count)
+#     return longest
+            
+# print(conseSequenceOptimize1([100,4, 200, 1, 3, 2]))
+
+
+
+# quqestion 2
+
+def longestOptimize(arr):
+    # [100,4, 200, 1, 3, 2]
+    longest = 0
+    hash_table = set(arr)
+    for num in hash_table:
+        count=0 
+        if num-1 not in hash_table:
+           start_squc = num
+           count+=1 
+           
+           while start_squc+1 in hash_table:
+               start_squc+=1
+               count+=1
+
+           longest = max(longest,count) 
+    return longest           
+            
+                    
+print(longestOptimize([100,2,3,1,5,4]))
