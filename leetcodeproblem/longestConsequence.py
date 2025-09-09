@@ -91,4 +91,42 @@ def longestOptimize(arr):
     return longest           
             
                     
-print(longestOptimize([100,2,3,1,5,4]))
+# print(longestOptimize([100,2,3,1,5,4]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ************************USING----------SORTING************************************
+
+
+def longestConsecutive(nums):
+        # nums = [100,2,3,1,5,4]
+        if not nums:
+            return 0
+        res = 0
+        nums.sort()
+
+        curr, streak = nums[0], 0
+        i = 0
+        while i < len(nums):
+            if curr != nums[i]:
+                curr = nums[i]
+                streak = 0
+            while i < len(nums) and nums[i] == curr:
+                i += 1
+            streak +=1
+            curr += 1
+            res = max(res, streak)
+        return res
+print(longestConsecutive([100,2,3,1,5,4]))
