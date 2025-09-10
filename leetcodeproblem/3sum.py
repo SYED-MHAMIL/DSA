@@ -68,11 +68,12 @@ def threeSum( nums):
             for j in range(i+1 , len(nums)):
                 count[nums[j]]-=1
                 if j-1 > i and nums[j] == nums[j -1]:
+                    print("cotinue when jth and less than jth are equal")
                     continue
                 target = -(nums[i] + nums[j])
                 if count[target] > 0 :
                    res.append([nums[i],nums[j],target]) 
-                
+            print(count)   
                             
             for j in range(i+1,len(nums)):
                     count[nums[j]]+=1
