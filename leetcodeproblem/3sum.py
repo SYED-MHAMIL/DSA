@@ -43,15 +43,6 @@ def threeSum1(nums):
 
 # *********************************************************************#                          hash map + sort *******************************************************************
 from collections import defaultdict
-def threeSumUsingHash(nums):
-    count = defaultdict(int)
-    nums.sort()     
-
-
-    
-    return nums
-print(threeSumUsingHash([-1,0,1,-1,-4]))    
-
 
 
 
@@ -81,7 +72,7 @@ def threeSum( nums):
     
         return res    
 
-print(threeSum([-4, -1,-1, 0, 1, 2]))
+# print(threeSum([-4, -1,-1, 0, 1, 2]))
                 #i,           j
 
 
@@ -107,30 +98,31 @@ print(threeSum([-4, -1,-1, 0, 1, 2]))
 
 
 
-# def threeSumbySorting(nums):
-#     sorted_val =  sorted(nums)
-#     print("sorted value ", sorted_val)
-#     res = set()
-#     for i in range(len(sorted_val)):
-#         target = -sorted_val[i]
-#         sublist= sorted_val[i+1:] 
-#         left,right =0, len(sublist)-1  
-#         while left < right :
-#             sumof = sublist[left] + sublist[right]
-#             if target == sumof:
-#                 print("get")
-#                 sorted_res =sorted([ sorted_val[i],sublist[left],sublist[right]]
-#                 )
-#                 print(sorted_res)
-#                 res.add(tuple(sorted_res))
-                
-#                 left+=1
-#                 right-=1
-#             elif sumof > target:
-#                 right-=1
-#             else:
-#                 left+=1
-                
-#     return [list(i) for i in res]
+def threeSumbySortingTwopointer(nums):
+    res= []
+    for i in range(len(nums)):
+        
+        if i and  nums[i-1]  == nums[i]:
+            continue
 
-# print(threeSumbySorting([-1,0,1,1,-1,-4]))
+        left,right = i+1, len(nums) -1
+        while left <right:
+            target = -(nums[i])
+            sum = nums[left] +nums[right]
+            if target == sum:
+               res.append([nums[i],nums[left] ,nums[right]])
+               left+=1
+               right-=1
+
+               while left <right and nums[left] == nums[left-1]:
+                   left+=1
+               while left <right and nums[right] == nums[right+1] :
+                   right-=1
+            elif target > sum:
+                 left+=1
+            else:
+                right-=1
+    return res
+
+
+print(threeSumbySortingTwopointer([-4,-1,-1,-1,-1, 0, 1,2,2,2,2,2]))
