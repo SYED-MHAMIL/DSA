@@ -204,6 +204,48 @@
 # # *****************************************************************************
 #                               UPDATing BETWEEN  NODE
 # # *****************************************************************************
+# class Node:
+#     def __init__(self,data):
+#         self.data = data 
+#         self.next = None
+    
+# node1 = Node(10)    
+# node2 = Node(20)    
+# node3 = Node(30)    
+# node4 = Node(40)    
+# addNodeinMid = Node(25)    
+
+# node1.next =  node2 
+# node2.next =  node3 
+# node3.next =  node4  
+# head = node1
+
+# current = head
+# while current is not None and  current.data != 20:
+#       print(current.data)
+#       current = current.next  
+# addNodeinMid.next =  current.next
+# current.next = addNodeinMid   
+
+
+# while current is not None :
+#       print(current.data)
+#       current = current.next  
+
+
+
+
+
+
+# # *****************************************************************************
+#                                     Seraching the node
+# # *****************************************************************************
+
+
+
+
+
+
 class Node:
     def __init__(self,data):
         self.data = data 
@@ -212,8 +254,7 @@ class Node:
 node1 = Node(10)    
 node2 = Node(20)    
 node3 = Node(30)    
-node4 = Node(40)    
-addNodeinMid = Node(25)    
+node4 = Node(40)        
 
 node1.next =  node2 
 node2.next =  node3 
@@ -221,19 +262,27 @@ node3.next =  node4
 head = node1
 
 current = head
-while current is not None and  current.data != 20:
-      print(current.data)
-      current = current.next  
-addNodeinMid.next =  current.next
-current.next = addNodeinMid   
-
-
-while current is not None :
-      print(current.data)
-      current = current.next  
 
 
 
+def searchKey(head,key):
+    
+    curr = head 
+    
+    while curr is not None:
+         if curr.data == key:
+            return True
+
+         curr = curr.next 
+
+    return False
+
+
+key = 20
+if searchKey(head, key) :
+   print("True")
+else:
+   print("false")
 
 
 
