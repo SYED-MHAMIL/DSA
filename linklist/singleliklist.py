@@ -89,6 +89,121 @@
 # # *****************************************************************************
     #                           DELETE AT THE END NODE
 # # *****************************************************************************
+# class Node:
+#     def __init__(self,data):
+#         self.data = data 
+#         self.next = None
+    
+# node1 = Node(10)    
+# node2 = Node(20)    
+# node3 = Node(30)    
+# node4 = Node(40)    
+
+# node1.next =  node2 
+# node2.next =  node3 
+# node3.next =  node4  
+# head = node1
+
+# current = head
+# while current.next.next is not None:
+#       print(current.data)
+#       current = current.next  
+# current.next =   None
+# print(current.next) 
+
+
+
+
+
+
+
+# # *****************************************************************************
+    #                           INSERTION BETWEEN  NODE
+# # *****************************************************************************
+# class Node:
+#     def __init__(self,data):
+#         self.data = data 
+#         self.next = None
+    
+# node1 = Node(10)    
+# node2 = Node(20)    
+# node3 = Node(30)    
+# node4 = Node(40)    
+# addNodeinMid = Node(25)    
+
+# node1.next =  node2 
+# node2.next =  node3 
+# node3.next =  node4  
+# head = node1
+
+# current = head
+# while current is not None and  current.data != 20:
+#       print(current.data)
+#       current = current.next  
+# addNodeinMid.next =  current.next
+# current.next = addNodeinMid   
+
+
+# while current is not None :
+#       print(current.data)
+#       current = current.next  
+
+
+
+
+
+
+
+
+
+
+
+
+# # *****************************************************************************
+#                               DELETING BETWEEN  NODE
+# # *****************************************************************************
+# class Node:
+#     def __init__(self,data):
+#         self.data = data 
+#         self.next = None
+    
+# node1 = Node(10)    
+# node2 = Node(20)    
+# node3 = Node(30)    
+# node4 = Node(40)    
+# addNodeinMid = Node(25)    
+
+# node1.next =  node2 
+# node2.next =  node3 
+# node3.next =  node4  
+# head = node1
+
+# current = head
+# while current.next is not None and  current.next.data != 20:
+#       print(current.data)
+#       current = current.next  
+# current.next = current.next.next 
+# # print(current.data, end=".")
+
+# while current is not None :
+#       print(current.data)
+#       current = current.next  
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # *****************************************************************************
+#                               UPDATing BETWEEN  NODE
+# # *****************************************************************************
 class Node:
     def __init__(self,data):
         self.data = data 
@@ -98,6 +213,7 @@ node1 = Node(10)
 node2 = Node(20)    
 node3 = Node(30)    
 node4 = Node(40)    
+addNodeinMid = Node(25)    
 
 node1.next =  node2 
 node2.next =  node3 
@@ -105,8 +221,22 @@ node3.next =  node4
 head = node1
 
 current = head
-while current.next.next is not None:
+while current is not None and  current.data != 20:
       print(current.data)
       current = current.next  
-current.next =   None
-print(current.next) 
+addNodeinMid.next =  current.next
+current.next = addNodeinMid   
+
+
+while current is not None :
+      print(current.data)
+      current = current.next  
+
+
+
+
+
+
+
+
+
