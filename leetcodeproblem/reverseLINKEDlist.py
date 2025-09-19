@@ -21,22 +21,183 @@
 
 
 
+# **************************************************************************************************
+#                           Using recurtion(stack)
+# **************************************************************************************************
 
 
-
-
-# def reverseLinkedList(head) :
-#     sort = reverseLinkedList(head.next)
+# def reverseNode(head):
+#     if head is None or head.next is  None:
+#        return head    
+#     res = reverseNode(head.next) 
     
+    
+#     head.next.next = head 
+#     head.next  = None
+
+
+
+# #----------------------- EXPLANATION------------------------
+
+#     # first step lets suppose when head is 4
+#   #   1-->2-->3-->4-->-->5-->None  =
+#   #  1-->2-->3-->5-->4
+    
+    
+#     # second step lets suppose when head is 3
+#   #   1-->2-->3-->4-->-->5-->None  =
+#   #   1-->2-->5-->4-->3
+
+   
+#     # third step lets suppose when head is 2
+#   #   1-->2-->3-->4-->-->5-->None  =
+#   #   1-->5-->4-->3-->2
+
+
+#        # third step lets suppose when head is 2
+#   #   1-->2-->3-->4-->-->5-->None  =
+#   #   5-->4-->3-->2-->1--None
 
     
+#     head.next = None
+#     return res
 
 
-def rec(n):
-    if n == 0:
-        return 1
+# def printList(node):
+#     while node is not None:
+#         print(f"{node.data}", end="")
+#         if node.next is not None:
+#             print(" -> ", end="")
+#         node = node.next
+#     print()
+
+
+
+# class Node:
+#     def __init__(self,data):
+#         self.data = data 
+#         self.next = None
     
-    res = n* rec(n-1)
-    print(n)
-    return res  
-print(rec(5))
+# head = Node(1)    
+# head.next = Node(2)    
+# head.next.next = Node(3)    
+# head.next.next.next= Node(4)
+
+
+# reversehead = reverseNode(head)
+# printList(reverseNode)
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Node:
+    def __init__(self, newData):
+        self.data = newData
+        self.next = None
+def reverseList(head):
+      if head is None or head.next is None :
+          return head
+ 
+      # reverse the rest of linked list and put the
+      # first element at the end
+      rest = reverseList(head.next)
+
+      # make the current head as last node of
+      # remaining linked list
+      head.next.next = head
+      
+      
+      #update next of current head to NULL
+     #break the connection for forward link 
+      head.next = None
+
+      return rest
+
+
+def printList(node):
+    # 1 -> 2 -> 3 -> 4 -> 5
+    while node is not None:
+         print(node.data,end="")
+         if node.next is not None:
+            print(end="-->")
+         node = node.next
+    print()
+if __name__ == "__main__":
+
+    # Create a hard-coded linked list:
+    # 1 -> 2 -> 3 -> 4 -> 5
+    head = Node(1)
+    head.next = Node(2)
+    head.next.next = Node(3)
+    head.next.next.next = Node(4)
+    head.next.next.next.next = Node(5)
+
+    head = reverseList(head)
+    printList(head)
+
+
+
+
+
+
+
+
+
+
+# **************************************************************************************************
+#                           Using ittationk ( threee pointer)
+# **************************************************************************************************
+def reverseNodebyIteration( head):
+        prev, curr = None, head
+
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+#       none 1--2--3
+        # 3-2-1-None
+        # first step when curr is  1 :
+        #  1--None
+        
+        # Second step when curr is  2 :
+        #  2--1--None
+
+        # third step when curr is  3 :
+        #  3--2--1--None
+ 
+
+   
+        return prev
+def printList(node):
+    while node is not None:
+        print(f"{node.data}", end="")
+        if node.next is not None:
+            print(" -> ", end="")
+        node = node.next
+    print()
+
+
+
+class Node:
+    def __init__(self,data):
+        self.data = data 
+        self.next = None
+    
+head = Node(1)    
+head.next = Node(2)    
+head.next.next = Node(3)    
+head.next.next.next= Node(4)
+
+
+reversehead = reverseNodebyIteration(head)
+printList(reversehead)

@@ -251,17 +251,18 @@ class Node:
         self.data = data 
         self.next = None
     
-node1 = Node(10)    
-node2 = Node(20)    
-node3 = Node(30)    
-node4 = Node(40)        
+head = Node(10)    
+head.next = Node(20)    
+head.next.next = Node(30)    
+head.next.next.next= Node(40)
 
-node1.next =  node2 
-node2.next =  node3 
-node3.next =  node4  
-head = node1
-
-current = head
+def reverseNode(head):
+    if head is None or head.next is not None:
+       return head    
+    res = reverseNode(head.next) 
+    head.next.next = head 
+    head.next = None
+    return res
 
 
 
