@@ -130,7 +130,7 @@ def printList(node):
          if node.next is not None:
             print(end="-->")
          node = node.next
-    print()
+    print(  )
 if __name__ == "__main__":
 
     # Create a hard-coded linked list:
