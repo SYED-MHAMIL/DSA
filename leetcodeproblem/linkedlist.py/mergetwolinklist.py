@@ -21,26 +21,29 @@
 
 
 
-# Input: list1 = [1,2,4], list2 = [1,3,5]
-
+# Input: list1 = [1,2,4,6], list2 = [1,3,5,7]
 # Output: [1,1,2,3,4,5]
 
 def mergedWithIteration(head1,head2):
     head = head1
-
-    preservedhead1 = head1.next
-    while head1 and head2:
-        head1.next = head2 
-        
-        head1.next.next = preservedhead1
-        # 1--1--3--4
-        if preservedhead1: 
-           preservedhead1 = preservedhead1.next
-        head1=head1.next #3
-        head2= head2.next # 5  
+    preverseHead1= head1.next 
     
-    return head
+    while preverseHead1 and head2:
+          head1.next = head2   #link
+          temp =  head2.next  # store
+          head2.next = preverseHead1   
+        #   1--1---2 
+          head1 = preverseHead1
+          preverseHead1 = preverseHead1.next
+          head2 = temp
+          head1.next = head2
+        #   1--1---2--3--4--5 
 
+    return head              
+          
+           
+
+    
 
 
 
@@ -49,11 +52,15 @@ def mergedWithIteration(head1,head2):
 
 def printList(head):
     while head is not None:
-        print(head.data ,end="")
+        print(head.data ,end="-->")
         head = head.next
         # if head.next is not  None :
         #     print(end="-->")
-            
+    print("None")        
+
+
+
+
 
 class Node:
     def __init__(self,data):
@@ -66,12 +73,14 @@ class Node:
 head = Node(1)    
 head.next = Node(2)    
 head.next.next = Node(4)    
+head.next.next.next = Node(6)    
 
 # for  head 2
 
 head2 = Node(1)    
 head2.next = Node(3)    
 head2.next.next = Node(5)    
+head2.next.next.next = Node(7)    
 
 reversehead = mergedWithIteration(head,head2)
 printList(reversehead)
