@@ -74,14 +74,14 @@ class Node:
 head = Node(1)    
 head.next = Node(2)    
 head.next.next = Node(4)    
-head.next.next.next = Node(6)    
+# head.next.next.next = Node(6)    
 
 # for  head 2
 
 head2 = Node(1)    
 head2.next = Node(3)    
 head2.next.next = Node(5)    
-head2.next.next.next = Node(7)    
+# head2.next.next.next = Node(7)    
 
 # reversehead = mergedWithIteration(head,head2)
 # printList(reversehead)
@@ -188,8 +188,8 @@ def mergedWithIteration4(head1,head2):
 
      
 
-mergedHead= mergedWithIteration4(head,head2)
-printList(mergedHead)
+# mergedHead= mergedWithIteration4(head,head2)
+# printList(mergedHead)
 
 
 
@@ -207,8 +207,32 @@ print("""
 
 
 def mergedWithRecursion(head1,head2):
-    pass
-     
+    # class ListNode:
+    #    def __init__(self, data=0, next=None):
+    #     self.data = data
+    #     self.next = next
+    
+    # Input: list1 = [1,2,4], list2 = [1,3,5]
+    # Output: [1,1,2,3,4,5]
 
-# mergedHead = mergedWithRecursion(head,head2)
-# printList(mergedHead)
+    if head1 is None:
+        return head2
+    if head2 is None:
+         return head1
+    
+    if head1.data <= head2.data:
+       head1.next= mergedWithRecursion(head1.next,head2)
+       print("head1",head1.data)
+       print("head1.next",head1.next.data)
+       return head1 
+    else:
+        head2.next= mergedWithRecursion(head1,head2.next)
+        print("head2",head1.data)
+        print("head2.next",head2.next.data)
+
+        return head2  
+    
+
+
+mergedHead = mergedWithRecursion(head,head2)
+printList(mergedHead)
