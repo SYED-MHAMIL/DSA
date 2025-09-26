@@ -206,28 +206,31 @@ print("""
 
 
 
-# def mergedWithRecursion(head1,head2):
-#     # Input: list1 = [1,2,4], list2 = [1,3,5]
-#     # Output: [1,1,2,3,4,5]
+def mergedWithRecursion(head1,head2):
+    # Input: list1 = [1,2], list2 = [1,3]
+    # Output: [1,1,2,3]
 
-#     if head1 is None:                                                  
-#         return head2
-#     if head2 is None:
-#          return head1
+    if head1 is None:
+        return head2
+    if head2 is None:
+        return head1
+        
+
+    if head1.data <= head2.data:
+       head1.next = mergedWithRecursion(head1.next,head2)
+       return head1 
+    else:
+        head2.next = mergedWithRecursion(head1,head2.next)
+        return head2       
     
-#     if head1.data <= head2.data:
-#        head1.next = mergedWithRecursion(head1.next,head2)
-#        return head1
-#     else:
-#         head2.next = mergedWithRecursion(head1,head2.next)
-#         return head2
+    
 
+    
 
-
-# # 1,1,2,3,4,5
-# # 5
-# mergedHead = mergedWithRecursion(head,head2)
-# printList(mergedHead)
+# 1,1,2,3,4,5
+# 5
+mergedHead = mergedWithRecursion(head,head2)
+printList(mergedHead)
 
 
 
@@ -237,3 +240,11 @@ print("""
 #      return 3* fac(2):
 #             return 2 *fac(1):
 #                   reutrn 1 * 1                    
+
+
+# def get_table(n,i=1):
+#     if i == 11:
+#        return []
+#     return ([n*i] if (n*i % 2) != 0 else []) + get_table(n,i+1)
+
+# print(get_table(5))
