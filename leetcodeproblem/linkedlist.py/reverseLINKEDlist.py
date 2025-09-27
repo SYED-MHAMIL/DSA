@@ -16,6 +16,21 @@
 # 0 <= The length of the list <= 1000.
 # -1000 <= Node.val <= 1000
 
+def reverse(head):
+    if head.next == None:
+       return head
+    rest= reverse(head.next)
+    head.next.next= head
+    print(head.next.data,'--->',head.data)
+    head.next = None
+    
+    
+    return rest 
+    
+
+# print(reverse())
+
+
 
 
 
@@ -63,29 +78,29 @@
 #     return res
 
 
-# def printList(node):
-#     while node is not None:
-#         print(f"{node.data}", end="")
-#         if node.next is not None:
-#             print(" -> ", end="")
-#         node = node.next
-#     print()
+def printList(node):
+    while node is not None:
+        print(f"{node.data}", end="")
+        if node.next is not None:
+            print(" -> ", end="")
+        node = node.next
+    print()
 
 
 
-# class Node:
-#     def __init__(self,data):
-#         self.data = data 
-#         self.next = None
+class Node:
+    def __init__(self,data):
+        self.data = data 
+        self.next = None
     
-# head = Node(1)    
-# head.next = Node(2)    
-# head.next.next = Node(3)    
-# head.next.next.next= Node(4)
+head = Node(1)    
+head.next = Node(2)    
+head.next.next = Node(3)    
+head.next.next.next= Node(4)
 
 
-# reversehead = reverseNode(head)
-# printList(reverseNode)
+reversehead = reverse(head)
+printList(reversehead)
 
 
 
@@ -142,7 +157,7 @@ if __name__ == "__main__":
     head.next.next.next.next = Node(5)
 
     head = reverseList(head)
-    printList(head)
+    # printList(head)
 
 
 
@@ -200,4 +215,4 @@ head.next.next.next= Node(4)
 
 
 reversehead = reverseNodebyIteration(head)
-printList(reversehead)
+# printList(reversehead)

@@ -35,8 +35,7 @@ print(sum_of_natutal(5))
 
 def summation(n):
     if n == 1:
-       return 1
-    
+       return 1    
     return  n*n + summation(n-1)
 
 print(summation(8))
