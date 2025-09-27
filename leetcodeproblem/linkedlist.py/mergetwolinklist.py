@@ -248,3 +248,5 @@ printList(mergedHead)
 #     return ([n*i] if (n*i % 2) != 0 else []) + get_table(n,i+1)
 
 # print(get_table(5))
+
+
