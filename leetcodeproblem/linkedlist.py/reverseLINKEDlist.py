@@ -20,7 +20,9 @@ def reverse(head):
     if head.next == None:
        return head
     rest= reverse(head.next)
+
     head.next.next= head
+    
     print(head.next.data,'--->',head.data)
     head.next = None
     
