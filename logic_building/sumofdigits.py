@@ -28,15 +28,50 @@ class Solution:
             # deelete the last number 
             n//=10
             
-        return sum    
+        return sum      
             
 
 # ********************************************************************
-# [Approach 3] String Conversion
+# [Approach 2] String Conversion
 
+# ********************************************************************
+
+
+
+class Solution:
+    def sumOfDigits(self, n):
+        # code here
+        n = str(n)
+        sum  = 0 
+        for i in n:
+            sum+= int(i)
+        return (sum) 
+s = Solution()
+print(s.sumOfDigits(123))
+
+
+
+
+
+
+
+# ********************************************************************
+# [Approach 3] recursion 
 # ********************************************************************
 
 
 
 
 
+
+class Solution:
+    def sumOfDigits(self, n):
+        if n == 0:
+            return 0
+
+        return n%10 + self.sumOfDigits(n//10)
+    # 3 + 2 +1
+    
+
+s = Solution()
+print(s.sumOfDigits(123))
