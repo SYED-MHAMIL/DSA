@@ -46,5 +46,26 @@ class Node:
 
 head = Node(1)    
 head.next = Node(2)    
-head.next.next = Node(4)    
-head.next.next.next = Node(6)  
+head.next.next = Node(3)    
+head.next.next.next = Node(2)    
+head.next.next.next.next = Node(4)    
+head.next.next.next.next.next = Node(6)  
+
+
+
+
+# def reorderList( head):
+#         left = head
+#         right = [] 
+        
+#         while right:
+#             if right.next is None :
+#                 return right 
+#             right.append(right)
+#             right  = right.next
+        
+#         while 
+
+
+
+# print(reorderList(head).data)            
