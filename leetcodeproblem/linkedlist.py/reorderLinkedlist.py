@@ -64,8 +64,6 @@ head.next.next.next.next.next = Node(6)
 #             right.append(right)
 #             right  = right.next
         
-#         while 
-
 
 
 # print(reorderList(head).data)            
