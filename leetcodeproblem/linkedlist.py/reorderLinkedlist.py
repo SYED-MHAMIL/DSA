@@ -54,16 +54,37 @@ head.next.next.next.next.next = Node(6)
 
 
 
-# def reorderList( head):
-#         left = head
-#         right = [] 
-        
-#         while right:
-#             if right.next is None :
-#                 return right 
-#             right.append(right)
-#             right  = right.next
-        
+def reorderList( head):
+        left = head
+        right = [] 
+        curr = head
+        res = head
+        # 1,6,2,4,3,2
+        while curr:
+            if curr.next is None :
+                return curr 
+            right.append(curr)
+            curr= curr.next
+        index=len(right) -1  
+
+        while  left.data > right[index].data:
+              res = left
+              prev_left= left
+              prev_left.next =right[index]  
+              prev = right[index]
+              
+            #   6--1
+              res = prev
+              left  = left.next
+              index-=1 
+
+        return res              
+
+                
 
 
-# print(reorderList(head).data)            
+
+
+
+
+print(reorderList(head).data)            
