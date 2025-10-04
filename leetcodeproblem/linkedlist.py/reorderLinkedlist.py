@@ -114,7 +114,7 @@ def reorderList(header):
         node.append(curr)
         curr = curr.next 
     i,j = 0, len(node) -1
-    while  i>j:
+    while  i<j:
         node[i].next = node[j] 
         i+=1
         if i>=j:
@@ -125,12 +125,7 @@ def reorderList(header):
 
     node[i].next = None 
     return node     
-              
-
-
-
-
-          
+                        
                 
 nodes  =reorderList(head)            
 while nodes[0]:
