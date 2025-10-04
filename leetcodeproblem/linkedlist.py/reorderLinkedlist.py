@@ -47,44 +47,99 @@ class Node:
 head = Node(1)    
 head.next = Node(2)    
 head.next.next = Node(3)    
-head.next.next.next = Node(2)    
-head.next.next.next.next = Node(4)    
+head.next.next.next = Node(4)    
+head.next.next.next.next = Node(5)    
 head.next.next.next.next.next = Node(6)  
 
 
 
 
-def reorderList( head):
-        left = head
-        right = [] 
-        curr = head
-        res = head
-        # 1,6,2,4,3,2
-        while curr:
-            if curr.next is None :
-                return curr 
-            right.append(curr)
-            curr= curr.next
-        index=len(right) -1  
+# def reorderList( head):
+#         left = head
+#         right = [] 
+#         curr = head
+#         res = head
 
-        while  left.data > right[index].data:
-              res = left
-              prev_left= left
-              prev_left.next =right[index]  
-              prev = right[index]
+#         # Input: head = [2,4,6,8]
+#         # Output: [2,8,4,6]
+
+#         while curr:
+#             if curr.next is None :
+#                 break 
+#             right.append(curr)
+#             curr= curr.next
+#         index=len(right) - 1  
+
+#         while  left.data > right[index].data:
+#               res = left
+#               prev_left= left
+#               prev_left.next =right[index]  
+#               prev = right[index]
               
-            #   6--1
-              res = prev
-              left  = left.next
-              index-=1 
+#             #   6--1
+#             #   res = prev
+#               left  = left.next
+#               if left is not None:
+#                  prev.next = left   
+#               index-=1 
 
-        return res              
+#         return res              
 
                 
+# node  =reorderList(head).data            
+# while node:
+#      print(node.data)
+#      node = node.next
 
 
 
 
 
 
-print(reorderList(head).data)            
+
+
+
+
+
+
+
+
+
+
+def reorderList(header):
+        node = [] 
+        curr = header
+        
+        # Input: head = [2,4,6,8]
+        # Output: [2,8,4,6]
+
+        while curr:
+            node.append(curr)
+            curr= curr.next
+        i,j=0,len(node)-1
+
+
+        while i <j:
+            #  123
+            #  132
+            node[i].next  = node[j]
+            i+=1
+            if i>=j:
+                 break
+            node[j].next = node[i]
+            j-=1             
+        node[i].next = None
+
+        return node
+
+              
+
+
+
+
+          
+                
+nodes  =reorderList(head)            
+while nodes[0]:
+    print(nodes[0].data)
+    nodes[0]= nodes[0].next 
