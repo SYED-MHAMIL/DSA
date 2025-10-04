@@ -107,31 +107,24 @@ head.next.next.next.next.next = Node(6)
 
 
 def reorderList(header):
-        node = [] 
-        curr = header
-        
-        # Input: head = [2,4,6,8]
-        # Output: [2,8,4,6]
+    node = [] # list of nodes
+    curr= header
 
-        while curr:
-            node.append(curr)
-            curr= curr.next
-        i,j=0,len(node)-1
+    while curr:
+        node.append(curr)
+        curr = curr.next 
+    i,j = 0, len(node) -1
+    while  i>j:
+        node[i].next = node[j] 
+        i+=1
+        if i>=j:
+           break
 
+        node[j].next = node[i]
+        j-=1  
 
-        while i <j:
-            #  123
-            #  132
-            node[i].next  = node[j]
-            i+=1
-            if i>=j:
-                 break
-            node[j].next = node[i]
-            j-=1             
-        node[i].next = None
-
-        return node
-
+    node[i].next = None 
+    return node     
               
 
 
