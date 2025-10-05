@@ -113,8 +113,8 @@ def reorderList(header):
             root.next  =  curr
             curr.next= tmp
         #   
-        # 1-2-3
-        # 1-3-2
+        # 1-2-3-4
+        # 1-3-2-3-4
         return tmp
 
     return rec(header,header.next)
@@ -124,10 +124,3 @@ nodes  =reorderList(head)
 # while nodes[0]:
 #     print(nodes[0].data)
 #     nodes[0]= nodes[0].next 
-
-
-
-
-
-
-
