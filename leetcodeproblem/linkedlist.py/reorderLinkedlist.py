@@ -54,44 +54,46 @@ head.next.next.next.next.next = Node(6)
 
 
 
-# def reorderList( head):
-#         left = head
-#         right = [] 
-#         curr = head
-#         res = head
+def reorderList( head):
+        left = head
+        right = [] 
+        curr = head
+        res = head
+        result  = res
 
-#         # Input: head = [2,4,6,8]
-#         # Output: [2,8,4,6]
+        # Input: head = [2,4,6,8]
+        # Output: [2,8,4,6]
 
-#         while curr:
-#             if curr.next is None :
-#                 break 
-#             right.append(curr)
-#             curr= curr.next
-#         index=len(right) - 1  
+        while curr:
+            right.append(curr)
+            curr= curr.next
+        index=len(right) - 1  
+        
+        
+        while left.data < right[index].data:
+              res.next = right[index]
+              prev = right[index]
+              left  = left.next
+              if left.data >= right[index].data:
+                  break 
+              prev.next = left
+              res = left
+              if index >= 0:
+                 index-=1 
+                 
+                 
+        # res.next = None
+        return result
 
-#         while  left.data > right[index].data:
-#               res = left
-#               prev_left= left
-#               prev_left.next =right[index]  
-#               prev = right[index]
-              
-#             #   6--1
-#             #   res = prev
-#               left  = left.next
-#               if left is not None:
-#                  prev.next = left   
-#               index-=1 
 
-#         return res              
 
                 
-# node  =reorderList(head).data            
-# while node:
-#      print(node.data)
-#      node = node.next
+node  =reorderList(head)            
+while node:
+     print(node.data)
+     node = node.next
 
-
+print(node)
 
 
 
@@ -128,6 +130,8 @@ def reorderList(header):
                         
                 
 nodes  =reorderList(head)            
-while nodes[0]:
-    print(nodes[0].data)
-    nodes[0]= nodes[0].next 
+# while nodes[0]:
+#     print(nodes[0].data)
+#     nodes[0]= nodes[0].next 
+
+
