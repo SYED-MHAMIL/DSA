@@ -51,59 +51,9 @@ head.next.next.next = Node(4)
 head.next.next.next.next = Node(5)    
 head.next.next.next.next.next = Node(6)  
 
-
-
-
-def reorderList( head):
-        left = head
-        right = [] 
-        curr = head
-        res = head
-        result  = res
-
-        # Input: head = [2,4,6,8]
-        # Output: [2,8,4,6]
-
-        while curr:
-            right.append(curr)
-            curr= curr.next
-        index=len(right) - 1  
-        
-        
-        while left.data < right[index].data:
-              res.next = right[index]
-              prev = right[index]
-              left  = left.next
-              if left.data >= right[index].data:
-                  break 
-              prev.next = left
-              res = left
-              if index >= 0:
-                 index-=1 
-                 
-                 
-        # res.next = None
-        return result
-
-
-
-                
-node  =reorderList(head)            
-while node:
-     print(node.data)
-     node = node.next
-
-print(node)
-
-
-
-
-
-
-
-
-
-
+# *************************************************************************
+                #   THROUGH BRUTE FORCE
+# *************************************************************************
 
 
 
@@ -133,5 +83,51 @@ nodes  =reorderList(head)
 # while nodes[0]:
 #     print(nodes[0].data)
 #     nodes[0]= nodes[0].next 
+
+
+
+
+
+# *************************************************************************
+                #   THROUGH RECURSION
+# *************************************************************************
+
+
+# 1--none
+
+def reorderList(header):
+    
+    def rec(root,curr):
+
+        if curr:
+            return  root
+        root = rec(root,curr)
+        if not root:
+                return None
+
+        tmp = None
+        if root == curr or root.next == curr:
+           curr.next = None 
+        else:
+            tmp = root.next 
+            root.next  =  curr
+            curr.next= tmp
+        #   
+        # 1-2-3
+        # 1-3-2
+        return tmp
+
+    return rec(header,header.next)
+
+
+nodes  =reorderList(head)            
+# while nodes[0]:
+#     print(nodes[0].data)
+#     nodes[0]= nodes[0].next 
+
+
+
+
+
 
 
