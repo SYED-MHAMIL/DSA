@@ -95,32 +95,64 @@ nodes  =reorderList(head)
 
 # 1--none
 
-def reorderList(header):
+# def reorderList(header):
     
-    def rec(root,curr):
+#     def rec(root,curr):
 
-        if curr:
-            return  root
-        root = rec(root,curr)
-        if not root:
-                return None
+#         if curr:
+#             return  root
+#         root = rec(root,curr)
+#         if not root:
+#                 return None
 
-        tmp = None
-        if root == curr or root.next == curr:
-           curr.next = None 
-        else:
-            tmp = root.next 
-            root.next  =  curr
-            curr.next= tmp
-        #   
-        # 1-2-3-4
-        # 1-3-2-3-4
-        return tmp
+#         tmp = None
+#         if root == curr or root.next == curr:
+#            curr.next = None 
+#         else:
+#             tmp = root.next 
+#             root.next  =  curr
+#             curr.next= tmp
+#         #   
+#         # 1-2-3-4
+#         # 1-3-2-3-4
+#         return tmp
 
-    return rec(header,header.next)
+#     return rec(header,header.next)
 
 
-nodes  =reorderList(head)            
+# nodes  =reorderList(head)            
 # while nodes[0]:
 #     print(nodes[0].data)
 #     nodes[0]= nodes[0].next 
+
+
+
+
+def reorderList( head) :
+
+        def rec(root, cur):
+            if not cur:
+                return root
+
+            root = rec(root, cur.next)
+            if not root:
+                return None
+
+            tmp = None
+            if root == cur or root.next == cur:
+                cur.next = None
+            else:
+                tmp = root.next
+                root.next = cur
+                cur.next = tmp
+
+            return tmp
+
+        return rec(head, head.next)
+
+
+e = reorderList(head)
+print(e)
+while e is not None:
+    print(e.data)
+    e= e.next
