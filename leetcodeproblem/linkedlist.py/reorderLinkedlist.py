@@ -44,12 +44,14 @@ class Node:
 
 # for head1
 
-head = Node(1)    
-head.next = Node(2)    
-head.next.next = Node(3)    
-head.next.next.next = Node(4)    
-head.next.next.next.next = Node(5)    
-head.next.next.next.next.next = Node(6)  
+head = Node(2)    
+head.next = Node(4)    
+head.next.next = Node(6)    
+head.next.next.next = Node(8)    
+# head.next.next.next.next = Node(5)    
+# head.next.next.next.next.next = Node(6)
+
+
 
 # *************************************************************************
                 #   THROUGH BRUTE FORCE
@@ -58,28 +60,28 @@ head.next.next.next.next.next = Node(6)
 
 
 
-def reorderList(header):
-    node = [] # list of nodes
-    curr= header
+# def reorderList(header):
+#     node = [] # list of nodes
+#     curr= header
 
-    while curr:
-        node.append(curr)
-        curr = curr.next 
-    i,j = 0, len(node) -1
-    while  i<j:
-        node[i].next = node[j] 
-        i+=1
-        if i>=j:
-           break
+#     while curr:
+#         node.append(curr)
+#         curr = curr.next 
+#     i,j = 0, len(node) -1
+#     while  i<j:
+#         node[i].next = node[j] 
+#         i+=1
+#         if i>=j:
+#            break
 
-        node[j].next = node[i]
-        j-=1  
+#         node[j].next = node[i]
+#         j-=1  
 
-    node[i].next = None 
-    return node     
+#     node[i].next = None 
+#     return node     
                         
                 
-nodes  =reorderList(head)            
+# nodes  =reorderList(head)            
 # while nodes[0]:
 #     print(nodes[0].data)
 #     nodes[0]= nodes[0].next 
@@ -128,7 +130,7 @@ nodes  =reorderList(head)
 
 
 
-def reorderList( head) :
+def reorderList2( head) :
 
         def rec(root, cur):
             if not cur:
@@ -138,21 +140,26 @@ def reorderList( head) :
             if not root:
                 return None
 
+            print(f"Linking root={root.data} and cur={cur.data}")
+
             tmp = None
             if root == cur or root.next == cur:
+                print(f"Stop condition reached at {cur.data}")
                 cur.next = None
             else:
                 tmp = root.next
                 root.next = cur
                 cur.next = tmp
-
+                print(f"Connected {root.data} -> {cur.data} -> {tmp.data}")
+                 
             return tmp
 
-        return rec(head, head.next)
+        rec(head, head.next)
+        return head
 
 
-e = reorderList(head)
-print(e)
+e = reorderList2(head)
+# print(e.data)
 while e is not None:
     print(e.data)
     e= e.next
