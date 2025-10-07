@@ -131,33 +131,35 @@ head.next.next.next = Node(8)
 
 
 def reorderList2( head) :
+    # 2,4,6,8
 
-        def rec(root, cur):
-            if not cur:
-                return root
-
-            root = rec(root, cur.next)
-            if not root:
-                return None
-
-            print(f"Linking root={root.data} and cur={cur.data}")
-
-            tmp = None
-            if root == cur or root.next == cur:
-                print(f"Stop condition reached at {cur.data}")
-                cur.next = None
-            else:
-                tmp = root.next
-                root.next = cur
-                cur.next = tmp
-                print(f"Connected {root.data} -> {cur.data} -> {tmp.data}")
-                 
-            return tmp
-
-        rec(head, head.next)
-        return head
+    # 2,8,4,6
+    # unwind :8,6,4
+    def rec(root,curr):
+        if not curr:
+           return root
+        
+        root = rec(root,curr.next)
+        temp= None
+        
+        if not root:
+           print(" finisted linked")
+           return  None
 
 
+        if root.next == curr or root == curr :
+           curr.next = None   
+        else:
+            temp = root.next 
+            root.next = curr 
+            curr.next =temp
+        #  2-8-4-6
+        return temp #4
+
+        
+
+    rec(head,head.next)
+    return head
 e = reorderList2(head)
 # print(e.data)
 while e is not None:
