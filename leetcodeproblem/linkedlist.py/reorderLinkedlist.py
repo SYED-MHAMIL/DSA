@@ -41,7 +41,6 @@ class Node:
         self.data = data 
         self.next = None
     
-
 # for head1
 
 head = Node(1)    
