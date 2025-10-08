@@ -134,31 +134,31 @@ def reorderList2( head) :
 
     # 2,8,4,6
     # unwind :8,6,4
+    
     def rec(root,curr):
         if not curr:
            return root
         
         root = rec(root,curr.next)
-        temp= None
+        if not root :
+           return None
         
-        if not root:
-           print(" finisted linked")
-           return  None
-
-
+        temp = None
         if root.next == curr or root == curr :
-           curr.next = None   
+           curr.next =  None
         else:
-            temp = root.next 
-            root.next = curr 
-            curr.next =temp
-        #  2-8-4-6
-        return temp #4
+            temp = root.next
+            root.next = curr
+            curr.next = temp
+    
+        return temp # 2--8--4--6--4 
 
-        
 
+       
     rec(head,head.next)
     return head
+
+    
 e = reorderList2(head)
 # print(e.data)
 while e is not None:
