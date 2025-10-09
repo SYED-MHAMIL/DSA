@@ -129,38 +129,66 @@ head.next.next.next.next.next = Node(6)
 
 
 
-def reorderList2( head) :
-    # 2,4,6,8
+# def reorderList2( head) :
+#     # 2,4,6,8
 
-    # 2,8,4,6
-    # unwind :8,6,4
+#     # 2,8,4,6
+#     # unwind :8,6,4
     
-    def rec(root,curr):
-        if not curr:
-           return root
+#     def rec(root,curr):
+#         if not curr:
+#            return root
         
-        root = rec(root,curr.next)
-        if not root :
-           return None
+#         root = rec(root,curr.next)
+#         if not root :
+#            return None
         
-        temp = None
-        if root.next == curr or root == curr :
-           curr.next =  None
-        else:
-            temp = root.next
-            root.next = curr
-            curr.next = temp
+#         temp = None
+#         if root.next == curr or root == curr :
+#            curr.next =  None
+#         else:
+#             temp = root.next
+#             root.next = curr
+#             curr.next = temp
     
-        return temp # 2--8--4--6--4 
+#         return temp # 2--8--4--6--4 
 
 
        
-    rec(head,head.next)
-    return head
+#     rec(head,head.next)
+#     return head
 
     
-e = reorderList2(head)
+# e = reorderList2(head)
 # print(e.data)
-while e is not None:
-    print(e.data)
-    e= e.next
+# while e is not None:
+#     print(e.data)
+#     e= e.next
+
+
+
+
+
+
+
+
+
+# ************************************************************************
+#               BY Using two pointer method 
+# *************************************************************************
+
+
+
+def reorderListByTwoPointer(head) :
+    # 2,4,6,8
+    slow = head
+    fast = head
+    while fast:
+        slow = slow.next 
+        fast = fast.next.next 
+        
+    slow.next = None
+    
+
+    
+e = reorderListByTwoPointer(head)
