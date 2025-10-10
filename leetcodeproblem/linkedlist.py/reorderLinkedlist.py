@@ -47,8 +47,8 @@ head = Node(1)
 head.next = Node(2)    
 head.next.next = Node(3)    
 head.next.next.next = Node(4)    
-head.next.next.next.next = Node(5)    
-head.next.next.next.next.next = Node(6)
+# head.next.next.next.next = Node(5)    
+# head.next.next.next.next.next = Node(6)
 
 
 
@@ -182,18 +182,16 @@ head.next.next.next.next.next = Node(6)
 def reorderListByTwoPointer(head) :
     # 1,2,3,4,5,6
     # 1,6,2,5,3,4
-
-    
-    #  1,2,3   
-    #  6,5,4 
-    #  1,6,2,5,3,4 
+    # 1,2,3,4,5
 
     slow = head
-    fast = head
-    while fast:
-        fast = fast.next.next 
+    fast = head.next
+    while fast and fast.next:
         slow = slow.next 
-    print(slow.data)    
+        fast = fast.next.next
 
+
+
+  
     
 e = reorderListByTwoPointer(head)
