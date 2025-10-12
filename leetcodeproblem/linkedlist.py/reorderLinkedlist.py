@@ -193,5 +193,4 @@ def reorderListByTwoPointer(head) :
 
 
   
-    
 e = reorderListByTwoPointer(head)
