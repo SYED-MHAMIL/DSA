@@ -192,6 +192,17 @@ def reorderListByTwoPointer(head) :
     
     
     second = slow
+    prev = None
+    next = None
+    while second:
+        next = second.next
+        second.next = prev
+        prev = second
+        second = next
     
-  
+
+
+
+
+    
 e = reorderListByTwoPointer(head)
