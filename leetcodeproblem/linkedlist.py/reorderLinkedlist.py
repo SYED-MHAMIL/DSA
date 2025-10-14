@@ -180,38 +180,39 @@ head.next.next.next = Node(8)
 
 
 def reorderListByTwoPointer(head) :
-    # 1,2,3,4,5,6
-    # 1,6,2,5,3,4
-    # 1,2,3,4,5
     
-    slow = head
-    fast = head.next
+    if not head or not head.next:
+        return head
+
+
+
+    slow = head  #  2
+    fast = head.next # 4
     while fast and fast.next:
-        slow = slow.next 
-        fast = fast.next.next
+        slow = slow.next  # 6
+        fast = fast.next.next # 8
     
-    
-    second = slow
-    prev = None
+    second = slow 
+    prev = None 
     next = None
-    while second:
+    while second: 
         next = second.next
         second.next = prev
         prev = second
         second = next
     # Now prev is the head of the reversed second half
-    # We need to merge the two halves
-    first = head
-    second = prev
-    while second and first:
-        tmp1 = first.next
-        tmp2 = second.next
-        first.next = second
-        second.next = tmp1
-        first = tmp1
-        second = tmp2
+    # # We need to merge the two halves
+    # first = head
+    # second = prev
+    # while second and first:
+    #     tmp1 = first.next
+    #     tmp2 = second.next
+    #     first.next = second
+    #     second.next = tmp1
+    #     first = tmp1
+    #     second = tmp2
 
-    return head
+    return 
 e = reorderListByTwoPointer(head)
 while e is not None:
     print(e.data)
