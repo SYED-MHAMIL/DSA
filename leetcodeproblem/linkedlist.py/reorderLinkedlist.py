@@ -43,10 +43,10 @@ class Node:
     
 # for head1
 
-head = Node(1)    
-head.next = Node(2)    
-head.next.next = Node(3)    
-head.next.next.next = Node(4)    
+head = Node(2)    
+head.next = Node(4)    
+head.next.next = Node(6)    
+head.next.next.next = Node(8)    
 # head.next.next.next.next = Node(5)    
 # head.next.next.next.next.next = Node(6)
 
@@ -199,10 +199,20 @@ def reorderListByTwoPointer(head) :
         second.next = prev
         prev = second
         second = next
-    
+    # Now prev is the head of the reversed second half
+    # We need to merge the two halves
+    first = head
+    second = prev
+    while second and first:
+        tmp1 = first.next
+        tmp2 = second.next
+        first.next = second
+        second.next = tmp1
+        first = tmp1
+        second = tmp2
 
-
-
-
-    
+    return head
 e = reorderListByTwoPointer(head)
+while e is not None:
+    print(e.data)
+    e= e.next
