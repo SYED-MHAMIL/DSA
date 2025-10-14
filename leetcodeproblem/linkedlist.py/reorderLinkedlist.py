@@ -212,7 +212,7 @@ def reorderListByTwoPointer(head) :
     #     first = tmp1
     #     second = tmp2
 
-    return 
+    return  head
 e = reorderListByTwoPointer(head)
 while e is not None:
     print(e.data)
