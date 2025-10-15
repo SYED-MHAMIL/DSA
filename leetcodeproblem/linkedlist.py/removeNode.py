@@ -33,3 +33,11 @@ head.next.next.next = Node(4)
 
 arr = []
 
+temp = head
+while temp:
+    arr.append(temp)
+    temp = temp.next 
+
+print(arr)
+
+
