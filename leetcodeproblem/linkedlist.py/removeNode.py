@@ -28,16 +28,30 @@ head = Node(1)
 head.next = Node(2)    
 head.next.next = Node(3)    
 head.next.next.next = Node(4)  
+head.next.next.next.next = Node(5)  
 
 
+def main():
+    arr = []
 
-arr = []
+    temp = head
+    while temp:
+        arr.append(temp)
+        temp = temp.next 
 
-temp = head
-while temp:
-    arr.append(temp)
-    temp = temp.next 
+    n = 2
+    index =  len(arr) -n  
 
-print(arr)
+    arr.pop(index)
+    if not arr:
+       return None   
+    
+    before = index -1
+    after =  index 
+    arr[before].next =  arr[after]   
+      
+    while arr[0]:
+        print(arr[0].data)
+        arr[0] =arr[0].next 
 
-
+main()
