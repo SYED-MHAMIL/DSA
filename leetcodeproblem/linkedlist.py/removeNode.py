@@ -67,3 +67,28 @@ head.next.next.next.next = Node(5)
 #                Two pointer
 ##################################################
 
+
+
+def main():
+    first =  head 
+    second = head
+    newsEc= second 
+    n =2
+    step =1 
+    
+    while step < n :
+        first = first.next 
+        step+=1
+    
+    while  first and first.next :
+        first = first.next 
+        second = second.next 
+
+    second.next = first
+    return newsEc 
+
+
+h = main()
+while h:
+    print(h.data)
+    h = h.next
