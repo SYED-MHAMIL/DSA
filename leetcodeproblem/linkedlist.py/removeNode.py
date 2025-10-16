@@ -31,27 +31,38 @@ head.next.next.next = Node(4)
 head.next.next.next.next = Node(5)  
 
 
-def main():
-    arr = []
+# def main():
+#     arr = []
 
-    temp = head
-    while temp:
-        arr.append(temp)
-        temp = temp.next 
+#     temp = head
+#     while temp:
+#         arr.append(temp)
+#         temp = temp.next 
 
-    n = 2
-    index =  len(arr) -n  
+#     n = 2
+#     index =  len(arr) -n  
 
-    arr.pop(index)
-    if not arr:
-       return None   
+#     arr.pop(index)
+#     if not arr:
+#        return None   
     
-    before = index -1
-    after =  index 
-    arr[before].next =  arr[after]   
+#     before = index -1
+#     after =  index 
+#     arr[before].next =  arr[after]   
       
-    while arr[0]:
-        print(arr[0].data)
-        arr[0] =arr[0].next 
+#     while arr[0]:
+#         print(arr[0].data)
+#         arr[0] =arr[0].next 
 
-main()
+# main()
+
+
+
+
+
+
+
+
+################################################## 
+#                BRUTE FORCE APPROACH
+################################################## 
