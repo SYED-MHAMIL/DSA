@@ -70,11 +70,13 @@ head.next = Node(2)
 # 
 
 def main():
-    first,dummy =  head 
+    first= dummy =  head 
     second = head
     newsEc= second 
     n =2
     step =0
+
+    
     
     while step != n and first :
         first = first.next 
