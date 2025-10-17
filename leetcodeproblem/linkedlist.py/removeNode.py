@@ -26,9 +26,9 @@ class Node:
 
 head = Node(1)    
 head.next = Node(2)    
-head.next.next = Node(3)    
-head.next.next.next = Node(4)  
-head.next.next.next.next = Node(5)  
+    # head.next.next = Node(3)    
+    # head.next.next.next = Node(4)  
+# head.next.next.next.next = Node(5)  
 
 
 # def main():
@@ -67,28 +67,38 @@ head.next.next.next.next = Node(5)
 #                Two pointer
 ##################################################
 
-
+# 
 
 def main():
-    first =  head 
+    first,d =  head 
     second = head
     newsEc= second 
     n =2
-    step =1 
+    step =0
     
-    while step < n :
+    while step != n and first :
         first = first.next 
         step+=1
+
+    # if not first  :
+    #     second = None          
+    #     return    
     
+    if not first :
+       second.next = None
+       return newsEc
+
+
+
     while  first and first.next :
         first = first.next 
         second = second.next 
     
-    print("second pointer",second.data)
-    print("first pointer",first.data)
-
-    # second.next = first
-    # return newsEc 
+    # print("second pointer" ,second.data)
+    # print("first pointer" ,first.data)
+    
+    second.next = first
+    return newsEc 
 
 
 h = main()
