@@ -70,7 +70,7 @@ head.next = Node(2)
 # 
 
 def main():
-    first,d =  head 
+    first,dummy =  head 
     second = head
     newsEc= second 
     n =2
@@ -80,16 +80,7 @@ def main():
         first = first.next 
         step+=1
 
-    # if not first  :
-    #     second = None          
-    #     return    
     
-    if not first :
-       second.next = None
-       return newsEc
-
-
-
     while  first and first.next :
         first = first.next 
         second = second.next 
