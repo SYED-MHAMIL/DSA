@@ -83,9 +83,12 @@ def main():
     while  first and first.next :
         first = first.next 
         second = second.next 
+    
+    print("second pointer",second.data)
+    print("first pointer",first.data)
 
-    second.next = first
-    return newsEc 
+    # second.next = first
+    # return newsEc 
 
 
 h = main()
