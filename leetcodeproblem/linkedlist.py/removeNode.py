@@ -26,9 +26,9 @@ class Node:
 
 head = Node(1)    
 head.next = Node(2)    
-    # head.next.next = Node(3)    
-    # head.next.next.next = Node(4)  
-# head.next.next.next.next = Node(5)  
+head.next.next = Node(3)    
+head.next.next.next = Node(4)  
+head.next.next.next.next = Node(5)  
 
 
 # def main():
@@ -70,29 +70,14 @@ head.next = Node(2)
 # 
 
 def main():
-    first= dummy =  head 
-    second = head
-    newsEc= second 
-    n =2
-    step =0
+  dummy = Node(1)
+  dummy.next = head
 
-    
-    dummy.next = first
-    dummy.next = second
-    while step != n  :
-        first = first.next 
-        step+=1
+  first = dummy  
+  second = head 
 
-    
-    while  first and first.next :
-        first = first.next 
-        second = second.next 
-    
-    # print("second pointer" ,second.data)
-    # print("first pointer" ,first.data)
-    
-    second.next = first
-    return newsEc 
+
+
 
 
 h = main()
