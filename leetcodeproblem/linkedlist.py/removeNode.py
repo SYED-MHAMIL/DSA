@@ -77,8 +77,9 @@ def main():
     step =0
 
     
-    
-    while step != n and first :
+    dummy.next = first
+    dummy.next = second
+    while step != n  :
         first = first.next 
         step+=1
 
