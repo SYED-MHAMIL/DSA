@@ -69,16 +69,25 @@ head.next.next.next.next = Node(5)
 
 # 
 
-def main():
+def main(n =2):
   dummy = Node(1)
   dummy.next = head
 
   first = dummy  
   second = head 
   
-  
+  step = 0 
+  while step != n:
+       first = first.next 
+       step+=1
+  while  first :
+       first=first.next
+       second=second.next     
+#   tri = second.next.next
+#   second.next =  tri
+#   return dummy.next
 
-
+  print(second.data)
 
 
 h = main()
