@@ -74,18 +74,18 @@ def main(n =2):
   dummy.next = head
 
   first = dummy  
-  second = head 
+  second = dummy 
   
   step = 0 
   while step != n:
        first = first.next 
        step+=1
-  while  first :
+  while  first and first.next:
        first=first.next
        second=second.next     
-#   tri = second.next.next
-#   second.next =  tri
-#   return dummy.next
+  tri = second.next.next
+  second.next =  tri
+  return dummy.next
 
   print(second.data)
 
