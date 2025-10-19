@@ -95,3 +95,7 @@ while h:
     print(h.data)
     h = h.next
     
+
+
+
+print("aLL RIGHT ")
