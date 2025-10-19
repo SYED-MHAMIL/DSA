@@ -69,8 +69,8 @@ head.next.next.next.next = Node(5)
 
 # 
 
-def main(n =2):
-  dummy = Node(1)
+def main(n =3):
+  dummy = Node(0)
   dummy.next = head
 
   first = dummy  
@@ -87,7 +87,7 @@ def main(n =2):
   second.next =  tri
   return dummy.next
 
-  print(second.data)
+
 
 
 h = main()
