@@ -73,7 +73,7 @@ def main(n=2):
         curr = curr.next 
     
     removeIndex =  N - n
-    
+
 
 
 
