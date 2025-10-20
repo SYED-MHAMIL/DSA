@@ -26,9 +26,9 @@ class Node:
 
 head = Node(1)    
 head.next = Node(2)    
-  # head.next.next = Node(3)    
-  # head.next.next.next = Node(4)  
-  # head.next.next.next.next = Node(5)  
+head.next.next = Node(3)    
+head.next.next.next = Node(4)  
+head.next.next.next.next = Node(5)  
 
 
 # def main():
@@ -64,7 +64,7 @@ head.next = Node(2)
 
 
 
-def main(n=2):
+def main(n=4):
     N = 0 
     curr = head 
 
@@ -73,6 +73,19 @@ def main(n=2):
         curr = curr.next 
     
     removeIndex =  N - n
+    if removeIndex == 0 :
+        return head.next
+    temp = head
+
+    for i in range(N-1):
+        if (i+1) == removeIndex:
+          temp.next =  temp.next.next 
+          break
+          
+        temp = temp.next       
+
+    return head
+    
 
 
 
