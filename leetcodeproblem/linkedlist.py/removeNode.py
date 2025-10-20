@@ -31,30 +31,57 @@ head.next = Node(2)
   # head.next.next.next.next = Node(5)  
 
 
-def main():
-    arr = []
-    temp = head
-    while temp:
-        arr.append(temp)
-        temp = temp.next 
+# def main():
+#     arr = []
+#     temp = head
+#     while temp:
+#         arr.append(temp)
+#         temp = temp.next 
     
-    n = 2
-    removeIndex =  len(arr) -n
-    if removeIndex == 0: 
-        return head.next
+#     n = 2
+#     removeIndex =  len(arr) -n
+#     if removeIndex == 0: 
+#         return head.next
 
-    arr[removeIndex -1] = arr[removeIndex].next
+#     arr[removeIndex -1] = arr[removeIndex].next
     
-    return arr
+#     return arr
     
  
+# headremove = main()
+# while headremove:
+#     print(headremove.data)
+#     headremove = headremove.next  
+
+
+
+
+
+ ################################################## 
+ #                Iteration APPROACH
+ ################################################## 
+
+
+
+
+def main(n=2):
+    N = 0 
+    curr = head 
+
+    while curr :
+        N+=1
+        curr = curr.next 
+    
+    removeIndex =  N - n
+    
+
+
+
+    
 headremove = main()
 while headremove:
     print(headremove.data)
     headremove = headremove.next  
-
-
-
 
 
 
