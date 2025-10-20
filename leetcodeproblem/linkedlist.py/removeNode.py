@@ -25,36 +25,34 @@ class Node:
 # for head1
 
 head = Node(1)    
-  # head.next = Node(2)    
+head.next = Node(2)    
   # head.next.next = Node(3)    
   # head.next.next.next = Node(4)  
   # head.next.next.next.next = Node(5)  
 
 
-# def main():
-#     arr = []
-
-#     temp = head
-#     while temp:
-#         arr.append(temp)
-#         temp = temp.next 
-
-#     n = 2
-#     index =  len(arr) -n  
-
-#     arr.pop(index)
-#     if not arr:
-#        return None   
+def main():
+    arr = []
+    temp = head
+    while temp:
+        arr.append(temp)
+        temp = temp.next 
     
-#     before = index -1
-#     after =  index 
-#     arr[before].next =  arr[after]   
-      
-#     while arr[0]:
-#         print(arr[0].data)
-#         arr[0] =arr[0].next 
+    n = 2
+    removeIndex =  len(arr) -n
+    if removeIndex == 0: 
+        return head.next
 
-# main()
+    arr[removeIndex -1] = arr[removeIndex].next
+    
+    return arr
+    
+ 
+headremove = main()
+while headremove:
+    print(headremove.data)
+    headremove = headremove.next  
+
 
 
 
@@ -69,31 +67,31 @@ head = Node(1)
 
 # 
 
-def main(n =3):
-  dummy = Node(0)
-  dummy.next = head
+# def main(n =3):
+#   dummy = Node(0)
+#   dummy.next = head
 
-  first = dummy  
-  second = dummy 
+#   first = dummy  
+#   second = dummy 
   
-  step = 0 
-  while step != n:
-       first = first.next 
-       step+=1
-  while  first and first.next:
-       first=first.next
-       second=second.next     
-  tri = second.next.next
-  second.next =  tri
-  return dummy.next
+#   step = 0 
+#   while step != n:
+#        first = first.next 
+#        step+=1
+#   while  first and first.next:
+#        first=first.next
+#        second=second.next     
+#   tri = second.next.next
+#   second.next =  tri
+#   return dummy.next
 
 
 
 
-h = main()
-while h:
-    print(h.data)
-    h = h.next
+# h = main()
+# while h:
+#     print(h.data)
+#     h = h.next
     
 
 
