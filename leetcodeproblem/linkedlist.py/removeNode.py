@@ -153,8 +153,7 @@ head.next.next.next.next = Node(5)
 
 
 def main(head,n):
-    
-    
+        
     if not head:
        return None
     
