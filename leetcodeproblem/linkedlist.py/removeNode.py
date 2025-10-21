@@ -163,8 +163,8 @@ def main(head,n):
         return head.next
     return head
     
-headremove = main(head,n=[2])
-while headremove:
-    print(headremove.data , "-->",end="")
-    headremove = headremove.next  
+headRemove = main(head,n=[2])
+while headRemove:
+    print(headRemove.data , "-->",end="")
+    headRemove = headRemove.next  
 print("none")
