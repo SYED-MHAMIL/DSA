@@ -158,6 +158,7 @@ def main(head,n):
        return None
     
     head.next = main(head.next,n) 
+    print(head.data)
     n[0]-= 1
     if n[0] == 0:
         return head.next
