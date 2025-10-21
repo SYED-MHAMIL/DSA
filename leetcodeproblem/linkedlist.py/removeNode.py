@@ -158,11 +158,7 @@ def main(head,n):
     if not head:
        return None
     
-    head.next = main(head.next,n) 
-    print(head.data)
-    
-
-    print('\n \n')
+    head = main(head.next,n) 
     return head
 
 
