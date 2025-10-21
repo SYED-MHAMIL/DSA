@@ -158,13 +158,14 @@ def main(head,n):
     if not head:
        return None
     
-    head = main(head.next,n) 
+    head.next = main(head.next,n) 
+    n[0]-= 1
+    if n[0] == 0:
+        return head.next
     return head
-
-
     
-headremove = main(head,n=2)
+headremove = main(head,n=[2])
 while headremove:
-    print(headremove.data)
+    print(headremove.data , "-->",end="")
     headremove = headremove.next  
-
+print("none")
