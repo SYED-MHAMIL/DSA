@@ -152,23 +152,23 @@ head.next.next.next.next = Node(5)
 
 
 
-def main(head, N=0):
+def main(head,n):
     
-    n = 2   
+    
     if not head:
-       return N
+       return None
     
-    curr = main(head.next,N=N+1) 
+    head.next = main(head.next,n) 
+    print(head.data)
     
 
+    print('\n \n')
+    return head
 
 
     
-headremove = main(head)
+headremove = main(head,n=2)
 while headremove:
     print(headremove.data)
     headremove = headremove.next  
-
-
-
 
