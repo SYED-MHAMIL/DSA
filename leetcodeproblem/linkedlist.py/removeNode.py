@@ -64,37 +64,37 @@ head.next.next.next.next = Node(5)
 
 
 
-def main(n=4):
-    N = 0 
-    curr = head 
+# def main(n=4):
+#     N = 0 
+#     curr = head 
 
-    while curr :
-        N+=1
-        curr = curr.next 
+#     while curr :
+#         N+=1
+#         curr = curr.next 
     
-    removeIndex =  N - n
-    if removeIndex == 0 :
-        return head.next
-    temp = head
+#     removeIndex =  N - n
+#     if removeIndex == 0 :
+#         return head.next
+#     temp = head
 
-    for i in range(N-1):
-        if (i+1) == removeIndex:
-          temp.next =  temp.next.next 
-          break
+#     for i in range(N-1):
+#         if (i+1) == removeIndex:
+#           temp.next =  temp.next.next 
+#           break
           
-        temp = temp.next       
+#         temp = temp.next       
 
-    return head
+#     return head
     
 
 
 
 
     
-headremove = main()
-while headremove:
-    print(headremove.data)
-    headremove = headremove.next  
+# headremove = main()
+# while headremove:
+#     print(headremove.data)
+#     headremove = headremove.next  
 
 
 
@@ -149,6 +149,26 @@ while headremove:
  ################################################## 
  #                RECURCISE APPROACH
  ################################################## 
+
+
+
+def main(head, N=0):
+    
+    n = 2   
+    if not head:
+       return N
+    
+    curr = main(head.next,N=N+1) 
+    
+
+
+
+    
+headremove = main(head)
+while headremove:
+    print(headremove.data)
+    headremove = headremove.next  
+
 
 
 
