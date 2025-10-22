@@ -141,11 +141,6 @@ head.next.next.next.next = Node(5)
 
 
 
-
-
-
-
-
  ################################################## 
  #                RECURCISE APPROACH
  ################################################## 
@@ -158,10 +153,10 @@ def main(head,n):
        return None
     
     head.next = main(head.next,n) 
-    print(head.data)
-    n[0]-= 1
+    
+    n[0] -=1
     if n[0] == 0:
-        return head.next
+       return head.next 
     return head
     
 headRemove = main(head,n=[2])
