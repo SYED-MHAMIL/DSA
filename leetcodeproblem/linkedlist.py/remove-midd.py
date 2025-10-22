@@ -40,7 +40,3 @@ head.next.next.next.next = Node(5)
 
 
 
-
-
-
-
