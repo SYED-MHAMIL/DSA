@@ -38,5 +38,19 @@ head.next.next = Node(3)
 head.next.next.next = Node(4)  
 head.next.next.next.next = Node(5)  
 
+def removeMid(header):
+    left = header
+    rihgt = header.next 
+    prev= header
+    
+    if not header.next:
+        return None
+    
+    
+
+
+
+
+
 
 
