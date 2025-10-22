@@ -38,30 +38,28 @@ head.next = Node(2)
 # head.next.next.next = Node(4)  
 # head.next.next.next.next = Node(5)  
 
-def removeMid(header):
-    if not header.next or header:
+def removeMid(head):
+    if not head.next or not head:
         return None
     
-    left = header
-    right = header 
+    left = head
+    right = head 
     prev= None
-    # 1 , 2 
-    # prev = 1
-    # left = 2
-    #  right  = 3
+    
     while right and right.next:
         prev = left
         left= left.next
         right = right.next.next  
 
     prev.next = left.next
-    return  header   
+    return  head   
 
 
 he = removeMid(head)
 while he:
     print(he.data,'-->',end="")
-    he = he.next 
+    he = he.next
+
 print('None')
 
 
