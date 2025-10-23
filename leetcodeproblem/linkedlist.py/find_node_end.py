@@ -31,7 +31,8 @@ def find_end(header,n):
     return  slow.next
 
 findnode = find_end(head,1)
-print(findnode.data,)
+print(findnode.data)
+
     
     
 
