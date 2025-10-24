@@ -23,26 +23,43 @@ head.next.next.next.next = Node(3)
 
 
 
-def removeDup(head):
-    if not head.next or not head:
-        return None
+# def removeDup(head):
+#     if not head.next or not head:
+#         return None
     
 
-    curr = head
+#     curr = head
     
-    while curr and curr.next:
-        if curr.data == curr.next.data:
-            curr.next = curr.next.next
-        else:
-            curr= curr.next
+#     while curr and curr.next:
+#         if curr.data == curr.next.data:
+#             curr.next = curr.next.next
+#         else:
+#             curr= curr.next
     
-    return  head   
+#     return  head   
 
 
-he = removeDup(head)
+# he = removeDup(head)
+# while he:
+#     print(he.data,'-->',end="")
+#     he = he.next
+
+# print('None')
+
+
+
+
+
+def removNodebyValue(value):
+    value = value.next 
+    # return value
+    
+
+
+
+he = removNodebyValue(head.next.next.next)
 while he:
     print(he.data,'-->',end="")
     he = he.next
 
-# print('None')
-
+print('None')
