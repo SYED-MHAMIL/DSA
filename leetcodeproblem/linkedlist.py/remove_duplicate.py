@@ -44,5 +44,5 @@ while he:
     print(he.data,'-->',end="")
     he = he.next
 
-print('None')
+# print('None')
 
