@@ -24,7 +24,7 @@ class Solution:
                 return True
             hash_map.add(head.next)        
             head = head.next    
-        # return False
+        return False
     
 
 
