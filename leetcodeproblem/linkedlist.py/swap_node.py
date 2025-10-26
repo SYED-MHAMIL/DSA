@@ -36,7 +36,7 @@ def swap_nodePair(header):
         prev.next = fast
         fast.next = slow
         #  2-1
-        # slow.next = temp.next
+        slow.next = temp.next
 
 
         prev =slow
