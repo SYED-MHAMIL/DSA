@@ -33,11 +33,11 @@ def swap_nodePair(header,n):
         temp2 = slow.next
         fast.next = slow
         slow.next = temp
+        #  2--1----3
 
 
-        slow = temp2.next 
-        fast = temp.next
-         
+        slow = temp2 
+        fast = temp
 
 
     return  header
@@ -48,10 +48,3 @@ while findnode:
     findnode = findnode.next
 
 print('None')
-
-
-    
-    
-
-
-    
