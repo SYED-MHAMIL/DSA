@@ -29,22 +29,12 @@ def swap_nodePair(header):
     fast = header.next
     temp = None
     while fast and fast.next:
-        temp = fast
-        temp2 = slow
-        fast.next = slow
-        slow.next = temp.next
-        #  1 , 2 , 3 , 4 
-        #  2--1----3
-        print('slow',slow.data)
-        print('Fasr',fast.data)
-
-        print('\n     ===================' )
-
-        slow = temp2.next.next
-        fast = temp.next.next
-
-
-    return  temp
+        pass
+    
+    
+    
+    
+    return  header
 
 
 findnode = swap_nodePair(head)
