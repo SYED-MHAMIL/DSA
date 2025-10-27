@@ -25,27 +25,35 @@ head.next.next.next = Node(4)
 
 
 def swap_nodePair(header):
-    if not   header and not header.next:
-        return None
+    # if not   header and not header.next:
+    #     return None
     slow = header
     fast = header.next
     prev = None
-    res = header.next
+    res = fast
     isApply = False
 
 
-    while fast and fast.next:
-         temp = fast
+    while slow and fast:
+        # 1 ---- 2 --- 3
+         temp = fast.next
          fast.next = slow
-         slow.next  =temp.next
-
-
-         print("tepm",  temp.next.data) 
-    
-         slow = slow.next.next
-         fast =  fast.next.next   
+         slow.next  =temp
+        #  2--1---3---4
+         if isApply:
+            print("aapply")
+            prev.next = fast
          
-         return  res
+         isApply = True
+         prev = slow
+        #  prev = 1
+         if temp:
+            slow =  temp
+            fast = temp.next
+         else:
+             break
+
+    return  res
 
 
 findnode = swap_nodePair(head)
