@@ -28,7 +28,7 @@ def mergedWithIteration(head1,head2):
     head = head1
     preverseHead1= head1.next 
     
-    while preverseHead1 and head2:
+    while preverseHead1 and head2:  
           head1.next = head2   #link
           temp =  head2.next  # store
           head2.next = preverseHead1   

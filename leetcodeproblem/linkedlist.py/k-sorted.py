@@ -1,3 +1,6 @@
+from typing import List, Optional
+
+
 class Node:
     def __init__(self,data):
         self.data = data 
@@ -5,8 +8,37 @@ class Node:
     
 # for head1
 
-head = Node(1)    
-# head.next = Node(2)    
-# head.next.next = Node(3)    
-# head.next.next.next = Node(4)  
-# head.next.next.next.next = Node(5)  
+# first list
+list1 = Node(1)    
+list1.next = Node(2)    
+list1.next.next = Node(4)    
+    
+
+
+# second lisst
+list2= Node(1)  
+list2.next = Node(3)  
+list2.next.next= Node(5)
+
+
+# third liist
+
+
+list3= Node(3)  
+list3.next = Node(6)
+
+
+
+listofLink = list1
+listofLink.next = list2 
+listofLink.next.next =  list3
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+    
+def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+
+            
