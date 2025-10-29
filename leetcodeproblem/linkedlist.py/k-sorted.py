@@ -41,4 +41,4 @@ class ListNode:
     
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
-            
+            pass
