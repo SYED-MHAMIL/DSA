@@ -39,6 +39,10 @@ class ListNode:
         self.val = val
         self.next = next
     
+# make the function for k-sorted list
+# unedrstand first
+
+
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         
     pass
