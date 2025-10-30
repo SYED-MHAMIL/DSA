@@ -45,6 +45,7 @@ class ListNode:
 # 2-  `brak down the problem `
 # 3- Write in paper 
 # 4-  write in code 
+# 5- Now use the optize solution
 
 
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
