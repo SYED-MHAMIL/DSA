@@ -40,5 +40,5 @@ class ListNode:
         self.next = next
     
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-
-            pass
+        
+    pass
