@@ -40,8 +40,10 @@ class ListNode:
         self.next = next
     
 # make the function for k-sorted list
+
 # 1-unedrstand the promblem first
-# 2- `brak down the problem `
+# 2-  `brak down the problem `
+# 3-
 
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         
