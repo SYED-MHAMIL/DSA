@@ -41,7 +41,7 @@ class ListNode:
     
 # make the function for k-sorted list
 # 1-unedrstand the promblem first
-# 2- ``
+# 2- `brak down the problem `
 
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         
