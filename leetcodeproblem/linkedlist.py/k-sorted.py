@@ -43,7 +43,7 @@ class ListNode:
 
 # 1-unedrstand the promblem first
 # 2-  `brak down the problem `
-# 3-
+# 3- Write in paper 
 
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         
