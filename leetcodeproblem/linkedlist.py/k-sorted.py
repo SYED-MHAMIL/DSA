@@ -23,15 +23,11 @@ list2.next.next= Node(5)
 
 # third liist
 
-
 list3= Node(3)  
 list3.next = Node(6)
 
-
-
-listofLink = list1
-listofLink.next = list2 
-listofLink.next.next =  list3
+#  
+listofLink = [list1,list2,list3]
 
 
 class ListNode:
@@ -50,22 +46,18 @@ class ListNode:
 
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     
-    listsOfnodes = []
     node= []
-    while lists:
-        listsOfnodes.append(lists)
-        lists = lists.next   
-    
-    # for lst in listsOfnodes:
-    #     while lst:
-    #         node.append(lst)
-    #         lst = lst.next 
-    
-    return listsOfnodes      
+
+    for lst in lists:
+        while lst:
+            node.append(lst.data)
+            lst = lst.next 
+    node.sort()
+    return node      
         
 listofmerge =mergeKLists(listofLink)
 for lstmerge in  listofmerge:
-    print(lstmerge.data)
+    print(lstmerge)
     # lstmerge= lstmerge.next
 
         
