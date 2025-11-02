@@ -63,8 +63,8 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
         
 listofmerge =mergeKLists(listofLink)
-for lstmerge in  listofmerge:
-    print(lstmerge)
-    # lstmerge= lstmerge.next
+while  listofmerge:
+    print(listofmerge.val)
+    listofmerge= listofmerge.next
 
         
