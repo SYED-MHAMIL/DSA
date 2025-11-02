@@ -46,14 +46,21 @@ class ListNode:
 
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     
-    node= []
+    nodes= []
 
     for lst in lists:
         while lst:
-            node.append(lst.data)
+            nodes.append(lst.data)
             lst = lst.next 
-    node.sort()
-    return node      
+    nodes.sort()
+    dummy = ListNode(0)
+    curr = dummy
+    for node in nodes:
+        curr.next = ListNode(node)
+        curr = curr.next
+    
+    return dummy.next
+
         
 listofmerge =mergeKLists(listofLink)
 for lstmerge in  listofmerge:
