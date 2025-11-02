@@ -56,12 +56,12 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         listsOfnodes.append(lists)
         lists = lists.next   
     
-    for lst in listsOfnodes:
-        while lst:
-            node.append(lst)
-            lst = lst.next 
+    # for lst in listsOfnodes:
+    #     while lst:
+    #         node.append(lst)
+    #         lst = lst.next 
     
-    return node      
+    return listsOfnodes      
         
 listofmerge =mergeKLists(listofLink)
 for lstmerge in  listofmerge:
