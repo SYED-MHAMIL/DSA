@@ -44,6 +44,10 @@ class ListNode:
 # 5- Now use the optize solution
 
 
+
+
+
+
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     
     nodes= []
@@ -58,6 +62,7 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     for node in nodes:
         curr.next = ListNode(node)
         curr = curr.next
+        
     
     return dummy.next
 
