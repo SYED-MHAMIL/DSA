@@ -91,7 +91,7 @@ def mergeKLists( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
                     minNode = i
 
   
-        return res.next``
+        # return res.next``
 
 
 
