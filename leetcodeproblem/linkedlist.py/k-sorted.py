@@ -91,7 +91,7 @@ def mergeKLists( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
                     minNode = i
 
   
-        return res.next
+        return res.next``
 
 
 
@@ -99,4 +99,4 @@ def mergeKLists( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 listofmerge =mergeKLists(listofLink)
 # while  listofmerge:
 #     print(listofmerge.val)
-#     listofmerge= listofmerge.next
+#     listofmerge= listofmerge.next 
