@@ -2,8 +2,8 @@ from typing import List, Optional
 
 
 class Node:
-    def __init__(self,data):
-        self.data = data 
+    def __init__(self,val):
+        self.val = val 
         self.next = None
     
 # for head1
@@ -84,22 +84,19 @@ def mergeKLists( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
             minNode = -1
             for i in range(len(lists)):
                 if not lists[i]:
+                    print("cntinue`")
                     continue
                 if minNode == -1 or lists[minNode].val > lists[i].val:
+                    print("minnode",minNode)
                     minNode = i
 
-            if minNode == -1:
-                break
-            cur.next = lists[minNode]
-            lists[minNode] = lists[minNode].next
-            cur = cur.next
-
+  
         return res.next
 
 
 
 
-# listofmerge =mergeKLists(listofLink)
+listofmerge =mergeKLists(listofLink)
 # while  listofmerge:
 #     print(listofmerge.val)
 #     listofmerge= listofmerge.next
