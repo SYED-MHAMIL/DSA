@@ -49,23 +49,23 @@ class ListNode:
 #                            Brute fofrce approaach
 #==========================================================================================================================
 
-# def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     
-#     nodes= []
+    nodes= []
 
-#     for lst in lists:
-#         while lst:
-#             nodes.append(lst.data)
-#             lst = lst.next 
-#     nodes.sort()
-#     dummy = ListNode(0)
-#     curr = dummy
-#     for node in nodes:
-#         curr.next = ListNode(node)
-#         curr = curr.next
+    for lst in lists:
+        while lst:
+            nodes.append(lst.data)
+            lst = lst.next 
+    nodes.sort()
+    dummy = ListNode(0)
+    curr = dummy
+    for node in nodes:
+        curr.next = ListNode(node)
+        curr = curr.next
         
     
-#     return dummy.next
+    return dummy.next
 
         
 # listofmerge =mergeKLists(listofLink)
@@ -81,22 +81,30 @@ def mergeKLists( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         cur = res
 
         while True:
-            minNode = -1
+            minNode =  -1 
             for i in range(len(lists)):
                 if not lists[i]:
-                    print("cntinue`")
-                    continue
-                if minNode == -1 or lists[minNode].val > lists[i].val:
-                    print("minnode",minNode)
-                    minNode = i
-
-  
-        # return res.next``
-
-
-
+                   continue
+  #     Input: lists = [[1,2,4] , [1,3,5] , [3,6]]
+                if minNode == -1 or lists[i].val < lists[minNode].val :
+                    # pass
+                    minNode = i 
+            if minNode == -1:
+               break        
+                       
+            cur.next = lists[minNode]
+            lists[minNode] = lists[minNode].next 
+            
+            cur = cur.next 
+            
+        
+        return res.next
+        
+                    
+                               
 
 listofmerge =mergeKLists(listofLink)
-# while  listofmerge:
-#     print(listofmerge.val)
-#     listofmerge= listofmerge.next 
+while  listofmerge:
+    print(listofmerge.val)
+    listofmerge= listofmerge.next 
+    
