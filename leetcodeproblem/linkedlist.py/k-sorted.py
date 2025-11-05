@@ -158,26 +158,28 @@ def mergeKListsTwoJoint( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
             if l1.val < l2.val:
                 curr.next = l1
                 l1 = l1.next
-                curr = curr.next  
+          
             else:
                 curr.next = l2
                 l2 = l2.next
-                curr = curr.next
             
-            if l1:
+            curr = curr.next
+        
+        if l1:
                curr.next= l1 
-            if l2:
-                curr.next = l2  
+        if l2:
+            curr.next = l2  
                 
-            return dummy.next  
+        
+        return dummy.next  
          
-            
-           
-    return mergetwolist(lists[0],lists[1])
+    if len(lists) == 0:
+            return None
 
+    for i in  range(1,len(lists)):
+        lists[i]= mergetwolist(lists[i-1],lists[i])
     
-    
-    
+    return lists[-1]
     
     
     
