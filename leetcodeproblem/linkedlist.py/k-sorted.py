@@ -150,30 +150,38 @@ def mergeKListsiteration( lists: List[Optional[ListNode]]) -> Optional[ListNode]
 
 
 def mergeKListsTwoJoint( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        res = ListNode(0)
-        cur = res
+    def mergetwolist(l1,l2):
+        dummy = ListNode()
+        curr= dummy
+        
+        while l1 and l2:
+            if l1.val < l2.val:
+                curr.next = l1
+                l1 = l1.next
+                curr = curr.next  
+            else:
+                curr.next = l2
+                l2 = l2.next
+                curr = curr.next
+            
+            if l1:
+               curr.next= l1 
+            if l2:
+                curr.next = l2  
+                
+            return dummy.next  
+         
+            
+           
+    return mergetwolist(lists[0],lists[1])
 
-        while True:
-            minNode =  -1 
-            for i in range(len(lists)):
-                if not lists[i]:
-                   continue
-  #     Input: lists = [[null] , [null] , [6]]
-                if minNode == -1 or lists[i].val < lists[minNode].val :
-                    # pass
-                    minNode = i 
-            if minNode == -1:
-               break        
-                       
-            cur.next = lists[minNode]
-            lists[minNode] = lists[minNode].next 
-            
-            cur = cur.next 
-            
-        
-        return res.next
-        
-                    
+    
+    
+    
+    
+    
+    
+                        
                                
 
 listofmerge =mergeKListsTwoJoint(listofLink)
