@@ -214,12 +214,11 @@ def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[Li
         while l1 and l2:
             if l1.val < l2.val:
                 curr.next = l1
-                l1 = l1.next
-          
+                l1 = l1.next      
             else:
                 curr.next = l2
                 l2 = l2.next
-            
+                        
             curr = curr.next
         
         if l1:
@@ -237,7 +236,7 @@ def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[Li
       
     mergeList = []
     for i in  range(0,len(lists)):
-        list1 = lists[i]      
+        list1 =  lists[i]      
         list2 =  lists[i+1] if i+1 < len(lists) else None
         mergeList.append(mergetwolist(list1,list2))
     return mergeList[0]       
@@ -245,8 +244,7 @@ def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[Li
     
     
                         
-                               
-    
+                        
 listofmerge =mergeKListsTwoJointOtherWAy(listofLink)
 while  listofmerge:
     print(listofmerge.val)
