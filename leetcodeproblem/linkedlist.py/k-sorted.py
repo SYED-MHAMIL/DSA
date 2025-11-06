@@ -49,23 +49,23 @@ class ListNode:
 #                            Brute fofrce approaach
 #==========================================================================================================================
 
-def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+# def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     
-    nodes= []
+#     nodes= []
 
-    for lst in lists:
-        while lst:
-            nodes.append(lst.data)
-            lst = lst.next 
-    nodes.sort()
-    dummy = ListNode(0)
-    curr = dummy
-    for node in nodes:
-        curr.next = ListNode(node)
-        curr = curr.next
+#     for lst in lists:
+#         while lst:
+#             nodes.append(lst.data)
+#             lst = lst.next 
+#     nodes.sort()
+#     dummy = ListNode(0)
+#     curr = dummy
+#     for node in nodes:
+#         curr.next = ListNode(node)
+#         curr = curr.next
         
     
-    return dummy.next
+#     return dummy.next
 
         
 # listofmerge =mergeKLists(listofLink)
@@ -94,29 +94,29 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
 
 
-def mergeKListsiteration( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        res = ListNode(0)
-        cur = res
+# def mergeKListsiteration( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+#         res = ListNode(0)
+#         cur = res
 
-        while True:
-            minNode =  -1 
-            for i in range(len(lists)):
-                if not lists[i]:
-                   continue
-  #     Input: lists = [[null] , [null] , [6]]
-                if minNode == -1 or lists[i].val < lists[minNode].val :
-                    # pass
-                    minNode = i 
-            if minNode == -1:
-               break        
+#         while True:
+#             minNode =  -1 
+#             for i in range(len(lists)):
+#                 if not lists[i]:
+#                    continue
+#   #     Input: lists = [[null] , [null] , [6]]
+#                 if minNode == -1 or lists[i].val < lists[minNode].val :
+#                     # pass
+#                     minNode = i 
+#             if minNode == -1:
+#                break        
                        
-            cur.next = lists[minNode]
-            lists[minNode] = lists[minNode].next 
+#             cur.next = lists[minNode]
+#             lists[minNode] = lists[minNode].next 
             
-            cur = cur.next 
+#             cur = cur.next 
             
         
-        return res.next
+#         return res.next
         
                     
                                
@@ -230,7 +230,7 @@ def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[Li
         list2 =  lists[i+1] if i+1 < len(lists) else None
         mergeList.append(mergetwolist(list1,list2))
     
-    return mergeList[0]                           
+    return mergeList[0]
                         
 listofmerge =mergeKListsTwoJointOtherWAy(listofLink)
 while  listofmerge:
