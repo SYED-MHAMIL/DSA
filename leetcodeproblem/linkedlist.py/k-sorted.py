@@ -149,7 +149,64 @@ def mergeKListsiteration( lists: List[Optional[ListNode]]) -> Optional[ListNode]
 
 
 
-def mergeKListsTwoJoint( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+# def mergeKListsTwoJoint( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+#     def mergetwolist(l1,l2):
+#         dummy = ListNode()
+#         curr= dummy
+        
+#         while l1 and l2:
+#             if l1.val < l2.val:
+#                 curr.next = l1
+#                 l1 = l1.next
+          
+#             else:
+#                 curr.next = l2
+#                 l2 = l2.next
+            
+#             curr = curr.next
+        
+#         if l1:
+#                curr.next= l1 
+#         if l2:
+#             curr.next = l2  
+                
+        
+#         return dummy.next  
+         
+#     if len(lists) == 0:
+#             return None
+
+#     for i in  range(1,len(lists)):
+#         lists[i]= mergetwolist(lists[i-1],lists[i])
+    
+#     return lists[-1]
+    
+    
+    
+                        
+                               
+
+# listofmerge =mergeKListsTwoJoint(listofLink)
+# while  listofmerge:
+#     print(listofmerge.val)
+#     listofmerge= listofmerge.next 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     def mergetwolist(l1,l2):
         dummy = ListNode()
         curr= dummy
@@ -175,19 +232,22 @@ def mergeKListsTwoJoint( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
          
     if len(lists) == 0:
             return None
+    
+    
+      
+    mergeList = []
+    for i in  range(0,len(lists)):
+        list1 = lists[i]      
+        #  1,2,4
+        list2 =  lists[i+1] if i+1 < len(lists) else None
+        #  1,3,5
+        # 1,1,2,3,4,5
+        mergeList.append(mergetwolist(list1,list2))
+    return mergeList
+    
+                         
 
-    for i in  range(1,len(lists)):
-        lists[i]= mergetwolist(lists[i-1],lists[i])
-    
-    return lists[-1]
-    
-    
-    
-                        
-                               
-
-listofmerge =mergeKListsTwoJoint(listofLink)
-while  listofmerge:
-    print(listofmerge.val)
-    listofmerge= listofmerge.next 
-
+listofmerge =mergeKListsTwoJointOtherWAy(listofLink)
+for _ in   listofmerge:
+    print("helloo")
+    # listofmerge= listofmerge.next 
