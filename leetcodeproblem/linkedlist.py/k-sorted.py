@@ -197,16 +197,8 @@ def mergeKListsiteration( lists: List[Optional[ListNode]]) -> Optional[ListNode]
 
 
 
-
-
-
-
-
-
-
-
-
 def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+
     def mergetwolist(l1,l2):
         dummy = ListNode()
         curr= dummy
