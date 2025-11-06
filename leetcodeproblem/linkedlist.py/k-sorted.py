@@ -223,14 +223,13 @@ def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[Li
          
     if len(lists) == 0:
             return None
-    
-    
-      
+         
     mergeList = []
     for i in  range(0,len(lists)):
         list1 =  lists[i]      
         list2 =  lists[i+1] if i+1 < len(lists) else None
         mergeList.append(mergetwolist(list1,list2))
+    
     return mergeList[0]                           
                         
 listofmerge =mergeKListsTwoJointOtherWAy(listofLink)
