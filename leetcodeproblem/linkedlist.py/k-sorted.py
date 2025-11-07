@@ -235,4 +235,4 @@ def mergeKListsTwoJointOtherWAy( lists: List[Optional[ListNode]]) -> Optional[Li
 listofmerge =mergeKListsTwoJointOtherWAy(listofLink)
 while  listofmerge:
     print(listofmerge.val)
-    listofmerge= listofmerge.next 
+    listofmerge= listofmerge.next   
