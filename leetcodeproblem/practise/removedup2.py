@@ -61,7 +61,7 @@ class Solution:
 
 
 
-def removeDup(nums,k=3) ->None:
+def removeDup(nums) ->None:
     l,r = 0,0 
     
     while r < len(nums):
@@ -69,7 +69,7 @@ def removeDup(nums,k=3) ->None:
         while r+1 < len(nums) and  nums[r] == nums[r+1]:
             count+=1
             r+=1
-        for i in range(min(k,count)):
+        for i in range(min(2,count)):
             nums[l] = nums[r]
             l+=1
             
