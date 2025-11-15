@@ -36,7 +36,7 @@ print(removeDup(numbers))
 
 
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums) :
         officernextroom = check_dup = 1
         n = len(nums)
         count =1
