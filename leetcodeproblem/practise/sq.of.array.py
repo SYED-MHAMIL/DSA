@@ -57,26 +57,60 @@
     
 
 
-def squareofArray(nums):
-    l,r = 0,len(nums)-1
+# def squareofArray(nums):
+#     l,r = 0,len(nums)-1
     
-    res = []
-    while l<= r:
-        neg = nums[l]**2
-        pos = nums[r]**2 
-        if pos > neg:
-           res.append(pos)
-           r-=1
-        else:
-           res.append(neg)
+#     res = []
+#     while l<= r:
+#         neg = nums[l]**2
+#         pos = nums[r]**2 
+#         if pos > neg:
+#            res.append(pos)
+#            r-=1
+#         else:
+#            res.append(neg)
            
-           l+=1
+#            l+=1
             
            
-    return res[::-1]        
+#     return res[::-1]        
     
     
     
                  
         
-print(squareofArray([-4,-1,0,3,10]))
+# print(squareofArray([-4,-1,0,3,10]))
+
+
+
+
+
+# def squareofArray(nums):
+#     l,r = 0,len(nums)-1
+    
+#     res = [0]*(s:= len(nums))
+#     print(len(res))
+#     index = s-1 
+#     while l<= r and index >=0:
+#         neg = nums[l]**2
+#         pos = nums[r]**2 
+#         if pos > neg:
+#            res[index] = pos
+#            r-=1
+#            index-=1
+#         else:
+#            print(index)
+#            res[index] = neg
+#            l+=1
+#            index-=1
+            
+           
+#     return res
+        
+# print(squareofArray([-4,-1,0,3,10]))
+
+
+
+
+
+
