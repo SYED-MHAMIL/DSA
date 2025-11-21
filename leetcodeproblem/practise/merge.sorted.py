@@ -15,12 +15,17 @@ def merge( nums1, m, nums2, n) -> None:
                 n-=1
             last-=1
         
-                  
+        while n > 0:
+             nums1[last] = nums2[n-1]
+             last-=1
+             n-=1 
         
+                  
+        return nums1    
         
         
         
             
              
                
-print(merge([1,2,3,0,0,0],3,[4,5,6],3 ))
+print(merge([2,0], m = 1, nums2 = [1],n = 1))
