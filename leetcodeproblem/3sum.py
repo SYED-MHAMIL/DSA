@@ -4,10 +4,11 @@
 
 
 
-def threeSum(nums):
+def threeSum(numsArray):
 
     # arr= set()
     arr = []
+    nums = list(sorted(numsArray))
     for i in range(len(nums)):
         for j in range(i+1,len(nums)):
             sumNum = -(nums[i]+nums[j])
@@ -98,9 +99,10 @@ def threeSum( nums):
 
 
 
-def threeSumbySortingTwopointer(nums):
+def threeSumbySortingTwopointer(numsAttay):
     res= []
-    for i in range(len(nums)):
+    nums = sorted(numsAttay)
+    for i in range(len(nums)-2):
         #  skip duplicate --->  lets suppose [-4,-1,-1,-1,-1, 0, 1,2] 
                                                     
         if i and  nums[i-1]  == nums[i]:
@@ -116,7 +118,7 @@ def threeSumbySortingTwopointer(nums):
                right-=1
         #  skip duplicate left --->  lets suppose [-4,-1,-1,-1,-1, 0, 1,2,2,2,2,2] 
                while left <right and nums[left] == nums[left-1]:
-                   left+=1
+                      left+=1
         #  skip duplicate right --->  lets suppose [-4,-1,-1,-1,-1, 0, 1,2,2,2,2,2] 
                while left <right and nums[right] == nums[right+1] :
                    right-=1
@@ -127,4 +129,4 @@ def threeSumbySortingTwopointer(nums):
     return res
 
 
-print(threeSumbySortingTwopointer([-4,-1,-1,-1,-1, 0, 1,2,2,2,2,2]))
+print(threeSumbySortingTwopointer([-1,-1,-4,0,1,2]))
