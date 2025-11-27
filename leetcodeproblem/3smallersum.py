@@ -9,8 +9,6 @@ def countTriplets(n,sum,arrs):
             while l < r :  
                 sum_up = arr[i]+arr[l]+arr[r] 
                 if sum_up <sum:
-                   
-                   ans=ans+ (r-l)
                    l+=1
                 else:
                    r-=1 
