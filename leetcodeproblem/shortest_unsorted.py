@@ -1,4 +1,3 @@
-
 def findUnsortedSubarray(nums):
          
         l =  0  
@@ -15,3 +14,5 @@ def findUnsortedSubarray(nums):
             r-=1
         return r-l + 1        
 print(findUnsortedSubarray([1,2,3,4]))
+
+
