@@ -17,4 +17,4 @@ def sortedSquares(nums):
 
         return res[::-1]
 
-print(sortedSquares( [-4,-1,0,3,10]))   
+print(sortedSquares([-4,-1,0,3,10]))
