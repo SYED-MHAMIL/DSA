@@ -24,15 +24,19 @@ def max_sum_subarray(nums,k):
     n = len(nums)
     sum_up  = sum(nums[low:high+1])
     res = 0 
-    while high < n:
-        res = max(res,sum_up)    
+    while high < n :
+        res = max(res,sum_up)
         low+=1
-        high+=1        
-        if high == n :
-           break 
+        high+=1 
+        if high == n:
+            break
         sum_up-=nums[low-1]
         sum_up+=nums[high]
-    return res
-
+        
+    return res    
+        
+        
+        
+     
 
 print(max_sum_subarray([100,500,300,400],2))
