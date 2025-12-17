@@ -33,10 +33,12 @@ def max_sum_subarray(nums,k):
         sum_up-=nums[low-1]
         sum_up+=nums[high]
         
-    return res    
+    return    
         
         
         
      
 
 print(max_sum_subarray([100,500,300,400],2))
+
+
