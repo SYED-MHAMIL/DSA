@@ -20,23 +20,53 @@
 # Constraints:
 
 
-def minSubArraayLen(target,nums):
-# Input: target = 7, nums = [2,3,1,2,4,3]
+# def minSubArraayLen(target,nums):
+# # Input: target = 7, nums = [2,3,1,2,4,3]
 
-    res = float('inf')
-    n= len(nums)
-    l=0
-    total = 0
-    for r in range(0,n):
-        total+=nums[r]
-        while total >= target:
-           res = min(res,r-l+1)
-           total-= nums[l]
-           l-=1
+#     res = float('inf')
+#     n= len(nums)
+#     l=0
+#     total = 0
+#     for r in range(0,n):
+#         total+=nums[r]
+#         while total >= target:
+#            res = min(res,r-l+1)
+#            total-= nums[l]
+#            l+=1
              
     
     
             
-    return   0 if isinstance(res,float) else res
+#     return   0 if isinstance(res,float) else res
 
-print(minSubArraayLen(target = 7, nums = [2,3,1,2,4,3]))    
+# print(minSubArraayLen(target = 11, nums = [1,1,1,1,1,1,1,1]))    
+
+
+
+# def minSubArraayLen(target,nums):
+# # Input: target = 7, nums = [2,3,1,2,4,3]
+
+    # res = float('inf')
+    # n= len(nums)
+    # l=0
+    # r=0
+    # total = 0
+    # while r< n:
+    #     total+=nums[r]
+    #     if total  < target:
+    #        r+=1
+    #     else:    
+    #         while total >= target:
+    #             res = min(res,r-l+1)
+    #             total-= nums[l]
+    #             l+=1
+      
+    #         r+=1
+    
+            
+    # return   0 if isinstance(res,float) else res
+
+# print(minSubArraayLen(target = 7, nums = [2,3,1,2,4,3]))    
+
+
+
