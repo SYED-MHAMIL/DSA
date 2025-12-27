@@ -62,5 +62,3 @@ def longestKSubstr(s, k):
         return  -1 if (res < k) else  res
     
 print(longestKSubstr(s = "ebngqsoagtufqifwf", k = 5))
-
-
