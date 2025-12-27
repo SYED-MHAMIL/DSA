@@ -32,6 +32,8 @@ def longestKSubstr(s, k):
     #  we will put it there loop  for 
         # ebngqsoagt{ufqifwf}
         
+
+
         n = len(s)
         res = 0
         obj={}
