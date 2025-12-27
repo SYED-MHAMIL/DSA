@@ -31,7 +31,7 @@ def longestKSubstr(s, k):
     #   first step will be take out the length
     #  second we will make the varibale  that take the longest substring
     #  we will put it there loop  for 
-        # ebngqsoagtufqifwf
+        # ebngqsoagt{ufqifwf}
         
         n = len(s)
         res = 0
