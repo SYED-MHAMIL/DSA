@@ -21,7 +21,6 @@
 #                 break
                  
 #     return  -1 if (res < k) else  res
-
 # print(longestKSubstr("aaba{cbe]bebe",3))
 
 
