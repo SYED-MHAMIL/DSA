@@ -25,7 +25,6 @@
 
 
 
-
 def longestKSubstr(s, k):
         # code here
     #   first step will be take out the length
