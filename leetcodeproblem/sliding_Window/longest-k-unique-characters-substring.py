@@ -31,8 +31,26 @@ def longestKSubstr(s, k):
     #  second we will make the varibale  that take the longest substring
     #  we will put it there loop  for 
         # ebngqsoagt{ufqifwf}
-        
+      
+      
+          
+      # Example 1:
 
+      # Input: fruits = [1,2,1]
+      # Output: 3
+      # Explanation: We can pick from all 3 trees.
+      # Example 2:
+
+      # Input: fruits = [0,1,2,2]
+      # Output: 3
+      # Explanation: We can pick from trees [1,2,2].
+      # If we had started at the first tree, we would only pick from trees [0,1].
+      # Example 3:
+
+      # Input: fruits = [1,2,3,2,2]
+      # Output: 4
+      # Explanation: We can pick from trees [2,3,2,2].
+      # If we had started at the first tree, we would only pick from trees [1,2].        
 
         n = len(s)
         res = 0
@@ -41,9 +59,10 @@ def longestKSubstr(s, k):
         r=0 
         
         while r < n :
+          
             obj[s[r]] = obj.get(s[r],0) +1
             # print("obj",obj) 
-            if len(obj) == k:
+            if len(obj) <= k:
                 res = max(res,r-l+1)
                 r+=1
             elif len(obj) > k:
@@ -57,9 +76,8 @@ def longestKSubstr(s, k):
                 print(obj)
                 l+=1
               r+=1
-            else:
-                r+=1              
+                        
                 
-        return  -1 if (res < k) else  res
+        return    res
     
-print(longestKSubstr(s = "ebngqsoagtufqifwf", k = 5))
+print(longestKSubstr(s = [0], k = 2))
