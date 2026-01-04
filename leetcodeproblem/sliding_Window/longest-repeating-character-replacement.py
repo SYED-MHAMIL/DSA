@@ -23,3 +23,40 @@ class Solution:
         return res
     
     
+# ooptimize sliding window solutuin class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        res =  0
+        n = len(s)
+        right= 0 
+         
+
+        for left in range(n):
+            maxCount =  0 
+            hashMap  ={}
+            
+            while right < n :
+                 hashMap[s[right]] = hashMap.get(s[right],0) +1
+                 maxCount = max(maxCount,hashMap[s[right]])
+                 
+                 hastobeReplaced = (right-left+1) -maxCount
+                 ableToReplaced= k - hastobeReplaced
+
+                 if ableToReplaced >=0 :
+                    res = max(res,right-left+1)
+                    right+=1
+                 else:
+                     if hashMap[s[left]] >1:
+                        hashMap[s[left]]-=1
+                     else:
+                        del hashMap[s[left]]
+
+
+                     left+=1
+                     right+=1
+            return res
+ 
+         
+                 
+                 
+                
+        
