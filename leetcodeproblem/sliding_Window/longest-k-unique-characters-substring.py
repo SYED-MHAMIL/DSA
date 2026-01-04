@@ -78,6 +78,6 @@ def longestKSubstr(s, k):
               r+=1
                         
                 
-        return    res
+        return res
     
 print(longestKSubstr(s = [0], k = 2))
