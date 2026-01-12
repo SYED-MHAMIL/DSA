@@ -20,11 +20,11 @@ def minWindow( s, t) :
             while len(obj)  == 0:
                res=min(res,list(s[left:right+1]))
                print("Res", res)
-               if s[left] in t:
-                   obj[s[left]] = obj.get(s[left],0) + 1  
-               print("obj fareq" ,obj )
+            #    if s[left] in t:
+            #        obj[s[left]] = obj.get(s[left],0) + 1  
+            #    print("obj fareq" ,obj )
                    
-               print("left pointer" ,left )
+            #    print("left pointer" ,left )
                left+=1 
                
         return res     
