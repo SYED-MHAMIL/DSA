@@ -55,3 +55,44 @@ class Solution:
         return False
     
     # almost 0(n)
+    
+    
+    # from itertools import permutations
+# from collections import Counter
+
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        if len(s1) > len(s2):
+          return False
+
+        s1element,s2element = [0]*26,[0]*26
+        for i in range(len(s1)):
+            s1element[ord(s1[i])-ord("a")]+=1
+            s2element[ord(s2[i]) -ord("a")]+=1
+        
+        match = 0  
+        for i in range(26):
+            match+=1 if (s1element[i]==s2element[i]) else 0
+
+        
+        l= 0 
+        for r in range(len(s1),len(s2)):
+            if match == 26:
+               return True
+            rIndex = ord(s2[r]) - ord("a")
+            s2element[rIndex]+=1
+            if s1element[rIndex] == s2element[rIndex]:
+               match+=1
+            elif s1element[rIndex]+1 == s2element[rIndex]:
+                match-=1
+
+
+            lIndex = ord(s2[l]) - ord("a")
+            s2element[lIndex]-=1
+            if s1element[lIndex] == s2element[lIndex]:
+               match+=1
+            elif s1element[lIndex]-1 == s2element[lIndex]:
+                match-=1
+            l+=1
+
+        return match ==26 
