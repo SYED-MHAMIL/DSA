@@ -1,7 +1,7 @@
 class Solution:
-    def findAnagrams(self, s: str, p: str) -> List[int]:      
+    def findAnagrams(self, s: str, p: str) :      
         if len(p) > len(s):
-            return []
+          return []
         sele = [0] * 26
         pele = [0] * 26
 
