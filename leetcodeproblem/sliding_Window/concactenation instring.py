@@ -56,26 +56,53 @@
 
 
 
-
 class Solution:
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
       required_words ={}
       current_words = {}
       required_wordsLength = len(words)
-      each_wrods = words[0]
+      each_words = len(words[0])
       
       chractor_len =  0 
       for i in words:
         chractor_len+=len(i)
         required_words[i] = required_words.get(i,0)+1
       
-      for i in range(0,chractor_len,each_wrods):
-          current_words[s[i:each_wrods]] = required_words.get(s[i],0)+1
+      for i in range(0,chractor_len,each_words):
+          current_words[s[i:i+each_words]] = current_words.get(s[i:i+each_words],0)+1
 
       match = 0 
       for word in words:
-          match+=1 if required_words[word] == current_words[word] else 0
+          match+=1 if required_words[word] == current_words.get(word,0) else 0
 
-      for i  in range(chractor_len,len(s),each_words) : 
-    #   that are nnow icimpoleete  
-         pass
+
+      result=[]
+      l= 0 
+      for r  in range(chractor_len,len(s),each_words):
+         if match == required_wordsLength:
+             result.append(l)
+             
+         #move left
+         print("left move ",current_words[s[l:l+each_words]])
+         current_words[s[l:l+each_words]]-=1
+         
+         if required_words.get(s[l:l+each_words],0) == current_words.get(s[l:l+each_words],0):
+            match+=1
+         elif required_words.get(s[l:l+each_words],0)-1 == current_words.get(s[l:l+each_words],0):
+            match-=1
+         l+=each_words
+
+         #move right
+         current_words[s[r:r+each_words]]= current_words.get(s[r:r+each_words],0)+1
+         if required_words.get(s[r:r+each_words],0) == current_words.get(s[r:r+each_words],0):
+            match+=1
+         elif required_words.get(s[r:r+each_words],0)+1 == current_words.get(s[r:r+each_words],0):
+            match-=1
+    
+      if match ==  required_wordsLength :
+           result.append(l)
+        
+      return result
+    
+obj =  Solution()
+print(obj.findSubstring( s = "barfoothefoobarman", words = ["foo","bar"]))
