@@ -60,8 +60,10 @@ class Solution:
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
       required_words ={}
       current_words = {}
-      required_wordsLength = len(words)
+      required_wordsLength = len(set(words))
       each_words = len(words[0])
+      print("each_words",each_words)
+      
       
       chractor_len =  0 
       for i in words:
@@ -72,19 +74,19 @@ class Solution:
           current_words[s[i:i+each_words]] = current_words.get(s[i:i+each_words],0)+1
 
       match = 0 
-      for word in words:
+      for word in set(words):
           match+=1 if required_words[word] == current_words.get(word,0) else 0
 
 
       result=[]
       l= 0 
+      print(current_words)
       for r  in range(chractor_len,len(s),each_words):
          if match == required_wordsLength:
              result.append(l)
-             
-         #move left
-         print("left move ",current_words[s[l:l+each_words]])
+     
          current_words[s[l:l+each_words]]-=1
+           
          
          if required_words.get(s[l:l+each_words],0) == current_words.get(s[l:l+each_words],0):
             match+=1
@@ -101,8 +103,8 @@ class Solution:
     
       if match ==  required_wordsLength :
            result.append(l)
-        
+    
       return result
     
 obj =  Solution()
-print(obj.findSubstring( s = "barfoothefoobarman", words = ["foo","bar"]))
+print(obj.findSubstring("[lingmindraboofooowin]gdingbarrwingmonkeypoundcake", ["fooo","barr","wing","ding","wing"]))
