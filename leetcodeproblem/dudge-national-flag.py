@@ -1,4 +1,4 @@
-# Input: arr[] = [0, 1, 2, 0, 1, 2]
+ # Input: arr[] = [0, 1, 2, 0, 1, 2]
 # Output: [0, 0, 1, 1, 2, 2]
 # Explanation: [0, 0, 1, 1, 2, 2] has all 0s first, then all 1s and all 2s in last.
 
@@ -20,10 +20,11 @@ def dudge_national(arr):
            l+=1
         elif val == 1:
            m+=1
+           print(m,h)
         else:
            arr[h],arr[m]  = arr[m],arr[h]
            h-=1    
     return arr 
 
-dnf= dudge_national([0, 1, 2, 0, 1, 2]) 
+dnf= dudge_national([2,0,1]) 
 print(dnf)
