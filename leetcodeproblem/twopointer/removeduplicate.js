@@ -82,8 +82,33 @@ var removeElement = function (nums, val) {
 
   while (left <= right) {
     // nums = [0,1,2,2,3,0,4,2], val = 2
+   //  here two things happens 
 
-  }
+   // first if val is not equal to current val :
+            //   also update k th value 
+          //  here we just updae the left pointer 
+   // else thing happens which is if val qual :
+         //  to thing another happens  :
+                  // if curr val is qual to swap: 
+                        // we will updaee right ppointer after swaps 
+                     //else: 
+                        //   modify update why it work becuse we have swaps remove element successfully for that place /
+      if (val == nums[left]) {
+         if (nums[left] == nums[right]) {
+               right-=1
+         } else {
+            [nums[left],nums[right]]=[nums[right],nums[left]]
+            k+=1
+            left+=1
+            right-=1
+         }
+      } else {
+         left+=1
+         k+=1
+      }
+    
+  
+}
   return k;
 };
 
