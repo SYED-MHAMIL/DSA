@@ -1,40 +1,103 @@
-
-
 //  take every susutring and and see is it palendrom or not;
 // is palendrom func
 
-function is_palendrom(text){
-    
-    if(text[0] !== text[text.length-1]){
-          return  false
+// function is_palendrom(text,i,j){
+//     // text = 'a'
+//     const strt =i
+//     const end =  j  
+//     let left= strt 
+//     let right= end
+//     while (left <= right){
+//         if(text[left] != text[right]){
+//            return  false
+//         }
+//         left+=1
+//         right-=1
+
+//     }
+//     return true
+// }
+
+
+// function  longestPalendrom(s) {
+//     // remove slicing  and got o(n2)
+//     let longest_palen=s[0];
+//     for(let i=0;  i<s.length; i++ ){
+//         for (let j = i; j < s.length; j++){            
+//             //  console.log(substr);
+              
+//              if(is_palendrom(text,i,j)){
+                
+//                  if(longest_palen.length < substr.length ){
+//                      longest_palen = substr
+
+//                  }
+//              }
+            
+//         }
+//     }
+//     return longest_palen
+// }
+
+// console.log(longestPalendrom("abcbbc"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function is_palendrom(text,i,j){
+    // text = 'a'
+    const strt =i
+    const end =  j  
+    let left= strt 
+    let right= end
+    while (left <= right){
+        if(text[left] != text[right]){
+           return  false
+        }
+        left+=1
+        right-=1
+
     }
-   
-    if(text.length <= 1){
-    return  true
-    }
-    return is_palendrom(text.slice(1,text.length -1))
+    return true
 }
 
 
 function  longestPalendrom(s) {
-    // remove slicing  and got o(n2)
-    let longest_palen=s[0];
+    let start_palendrom=0
+    let end_palendrom  =0 
     for(let i=0;  i<s.length; i++ ){
         for (let j = i; j < s.length; j++){            
-             const substr = s.slice(i,j+1)
-            //  console.log(substr);
               
-             if(is_palendrom(substr)){
+             if(is_palendrom(s,i,j)){
                 
-                 if(longest_palen.length < substr.length ){
-                     longest_palen = substr
+                 
+                 if((end_palendrom - start_palendrom +1) <= (j-i +1) ){
+                     start_palendrom= i
+                     end_palendrom=  j  
 
                  }
              }
             
         }
     }
-    return longest_palen
+    return s.slice(start_palendrom,end_palendrom+1)
+    // return "hello"
 }
 
-console.log(longestPalendrom("aba"));
+console.log(longestPalendrom("madam"));
