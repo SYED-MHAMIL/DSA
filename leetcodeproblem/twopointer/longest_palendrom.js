@@ -89,15 +89,15 @@ function  longestPalendrom(s) {
                  
                  if((end_palendrom - start_palendrom +1) <= (j-i +1) ){
                      start_palendrom= i
-                     end_palendrom=  j  
-
+                     end_palendrom=  j
                  }
              }
             
         }
     }
     return s.slice(start_palendrom,end_palendrom+1)
-    // return "hello"
 }
 
-console.log(longestPalendrom("madam"));
+console.log(longestPalendrom("abaab"));
+// 3 pointer --
+// 
