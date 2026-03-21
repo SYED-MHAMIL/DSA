@@ -46,6 +46,6 @@ var nextGreaterElements = function(nums) {
     
 };
 
-console.log(nextGreaterElements([1,2,1]))
+console.log(nextGreaterElements([1,2,1,1,1,1]))
 
 
