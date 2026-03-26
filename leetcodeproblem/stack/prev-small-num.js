@@ -1,18 +1,19 @@
 function prevSmallernumber(array) {
+    // 3,1,2,4
        let stack = []
        let result =  new Array(array.length).fill(-1)
        for (let index = 0; index < array.length; index++) {
         const element = array[index];
         
-        while (stack.length > 0  && stack[stack.length -1]  >= element) {
+        while (stack.length > 0  && array[stack[stack.length -1]]  >= element) {
                  stack.pop()
         }  
         
-        if (stack.length > 0  && stack[stack.length -1]  <  element) {
-            result[index] = stack[stack.length -1]        
+        if (stack.length > 0  && array[stack[stack.length -1]]  <  element) {
+            result[index] = array[stack[stack.length -1]]         
                
         }
-        stack.push(element)
+        stack.push(index)
 
        }
        return result
@@ -26,21 +27,16 @@ function prevSmallernumber(array) {
 
 function nextSmallernumber(array) {
     let stack = []
-    let result =  new Array(array.length).fill(-1)
-    for (let index = array.length-1; index >= 0 ; index--) {
+    let result =new Array(array.length).fill(4)
+    for (let index = 0;  index < array.length ; index++) {
         const element = array[index];
         
-        while (stack.length > 0  && stack[stack.length -1]  >= element) {
-            stack.pop()
-
-            
+        while (stack.length > 0  && array[stack[stack.length -1]]  > element) {
+            result[stack[stack.length -1]] = element        
+            stack.pop()       
         }  
         
-        if (stack.length > 0  && stack[stack.length -1]  <  element) {
-            result[index] = stack[stack.length -1]        
-            
-        }
-        stack.push(element)
+        stack.push(index)
         
     }
     return result
@@ -49,4 +45,4 @@ let n= nextSmallernumber([3,1,2,4])
 let p =  prevSmallernumber([3,1,2,4])
 console.log(n)
 console.log(p);
-console.log(((n[0] - 0) *(0- p[0])) * 3 );
+console.log(((n[1] - 1) *(1- p[1])) * 1);
