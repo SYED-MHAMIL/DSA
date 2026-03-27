@@ -12,17 +12,20 @@
 // Sum is 17.
 
 
-function MinimumsSubarray(array) {
-     let minSumarr = 0
-     let mode = 10^ + 7
-     for (let i = 0; i < array.length; i++) {
-        for (let j = i; j < array.length; j++) {
-            const sbr = array.slice(i,j+1);
-            minSumarr+= Math.min(...sbr) %  mode
+// function MinimumsSubarray(array) {
+//      let minSumarr = 0
+//      let mode = 10^ + 7
+//      for (let i = 0; i < array.length; i++) {
+//         for (let j = i; j < array.length; j++) {
+//             const sbr = array.slice(i,j+1);
+//             minSumarr+= Math.min(...sbr) %  mode
                    
-        }
-     }
-     return minSumarr
-}
+//         }
+//      }
+//      return minSumarr
+// }
 
-console.log(MinimumsSubarray([11,81,94,43,3]));
+// console.log(MinimumsSubarray([11,81,94,43,3]));
+
+
+
