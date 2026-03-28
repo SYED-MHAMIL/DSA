@@ -41,11 +41,6 @@
     return result
  }
 
-
-
-
-
-
 // function nextSmallernumber(array) {
 //     let stack = []
 //     let result =new Array(array.length).fill(4)
@@ -72,17 +67,15 @@
 function nextSmallernumber(array) {
     // arr = [1,4, 5, 2, 10, 8]
     let stack= []
-    let result =new Array(array.length).fill(4)
+    let result =new Array(array.length).fill(array.length)
 
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
 
-         while (stack.length > 0 && array[stack[stack.length -1]] > element) {
+         while (stack.length > 0 && array[stack[stack.length -1]] >= element) {
                    result[stack[stack.length -1]] =    element
                    stack.pop() 
          }
-
-
          stack.push(index)
         
     }
@@ -91,8 +84,31 @@ return  result
 
 
 let array =  [1,1]
-let n= nextSmallernumber(array)
-let p =  prevSmallernumber(array)
-console.log("nse ",n,`for this [${array}]`)
-console.log("pse",p,`for this  [${array}]`);
+// let n= nextSmallernumber(array)
+// let p =  prevSmallernumber(array)
+// console.log("nse ",n,`for this [${array}]`)
+// console.log("pse",p,`for this  [${array}]`);
 // console.log(((n[1] - 1) *(1- p[1])) * 1);
+
+
+var sumSubarrayMins = function(array) {
+    let pse = prevSmallernumber(array);
+    let nse = nextSmallernumber(array);
+     console.log('pse',pse);
+     console.log('nse',nse);
+     
+
+    let minSumarr = 0;
+    let modulo = 1e9 + 7;
+
+    for (let i = 0; i < array.length; i++) {
+        let left = i - pse[i];
+        let right = nse[i] - i;
+
+        minSumarr = (minSumarr + (left * right * array[i]) % modulo) % modulo;
+    } 
+     
+    return minSumarr;
+};
+
+console.log(sumSubarrayMins(array));
