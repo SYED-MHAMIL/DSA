@@ -28,7 +28,7 @@
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
         while (stack.length > 0 &&  array[stack[stack.length -1]] > element) {
-                stack.pop()
+              stack.pop() 
         }
         if(stack.length>0 && array[stack[stack.length -1]] < element){
                result[index] =  array[stack[stack.length -1]]
