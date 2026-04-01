@@ -19,33 +19,42 @@
     
 // };
 
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-var nextGreaterElements = function(nums) {
-    let stack = []
-    let res = new Array(nums.length).fill(-1)
-    let n= nums.length 
+// /**
+//  * @param {number[]} nums
+//  * @return {number[]}
+//  */
+// var nextGreaterElements = function(nums) {
+//     let stack = []
+//     let res = new Array(nums.length).fill(-1)
+//     let n= nums.length 
  
-    for(let i=0; i<n*2; i++){
-        console.log(i)
-    while(stack && nums[stack[stack.length -1]] < nums[i%n]){
-         const pop_el = stack.pop()
-         console.log("opo",pop_el)
-         res[pop_el]=nums[i%n]
-    }
+//     for(let i=0; i<n*2; i++){
+//         console.log(i)
+//     while(stack && nums[stack[stack.length -1]] < nums[i%n]){
+//          const pop_el = stack.pop()
+//          console.log("opo",pop_el)
+//          res[pop_el]=nums[i%n]
+//     }
 
-    if(i < n){
-     stack.push(i%n)
-    }
+//     if(i < n){
+//      stack.push(i%n)
+//     }
    
-    }
+//     }
 
-   return res   
+//    return res   
     
-};
+// };
 
-console.log(nextGreaterElements([3,1,2,4]))
+// console.log(nextGreaterElements([3,1,2,4]))
 
 
+
+
+
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//       
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

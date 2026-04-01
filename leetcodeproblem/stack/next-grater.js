@@ -68,26 +68,26 @@
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // 
 
-var prevGreaterElement = function(array) {
-        // 
-     let  stack =  [];
-     let res = new  Array(array.length).fill(-1);
-      for (let  index = 0;  index < array.length;  index++) {
-        const element = array[ index];
-        while (stack.length >  0   &&  array[stack[stack.length -1]] < element) {
-                 stack.pop()
-        }
-        if(stack.length > 0){
-                res[index] = array[stack[stack.length -1]] 
+// var prevGreaterElement = function(array) {
+//         // 
+//      let  stack =  [];
+//      let res = []
+//       for (let  index = 0;  index < array.length;  index++) {
+//         const element = array[ index];
+//         while (stack.length >  0   &&  array[stack[stack.length -1]] < element) {
+//                  stack.pop()
+//         }
+//         if(stack.length > 0){
+//                 res.push(array[stack[stack.length -1]]) 
 
-        } 
-        stack.push(index)
+//         }else{
+//                 res.push(-1)
 
+//         }
+//         stack.push(index)
+//       }
+//      return res
 
-        
-      }
-     return res
-
-}
-console.log(prevGreaterElement([10, 4, 2, 20, 40, 12]));
+// }
+// console.log(prevGreaterElement([10, 4, 2, 20, 40, 12]));
 

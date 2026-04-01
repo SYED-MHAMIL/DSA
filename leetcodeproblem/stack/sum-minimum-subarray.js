@@ -39,7 +39,8 @@ function nextSmallernumber(array) {
 var sumSubarrayMins = function(array) {
     let pse = prevSmallernumber(array);
     let nse = nextSmallernumber(array);
-
+    console.log([3,1,2,4]);
+    
     console.log('pse : ' ,pse);
     console.log('nse : ' ,nse);
     
@@ -47,8 +48,11 @@ var sumSubarrayMins = function(array) {
     let modulo = 1e9 + 7;
 
     for (let i = 0; i < array.length; i++) {
-        let left = i - pse[i];
-        let right = nse[i] - i;
+        let left = i - pse[i];  // count from left
+        let right = nse[i] - i; // count from right 
+        let  res =   left * right 
+        console.log('res',res);
+         
         minSumarr = (minSumarr + (left * right * array[i]) % modulo) % modulo;
     } 
 
@@ -56,4 +60,4 @@ var sumSubarrayMins = function(array) {
 };
 
 
-console.log(sumSubarrayMins([1,1]));
+console.log(sumSubarrayMins([3,1,2,4]));

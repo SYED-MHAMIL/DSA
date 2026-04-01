@@ -5,10 +5,13 @@
 // Example 1:
 
 // Input: s = "bcabc"
+// Input: s = "abc"
 // Output: "abc"
 // Example 2:
 
 // Input: s = "cbacdcbc"
+// Input: s = "acdcbc"
+
 // Output: "acdb"
  
 
