@@ -11,10 +11,9 @@ function  maximalRectangle(matrix) {
         if (!matrix.length) return 0;
         let histogramMatrix = []
         let  heights;
-        heights=  new Array(matrix[0].length).fill(0) 
+        heights=new Array(matrix[0].length).fill(0) 
         for (let i = 0; i < matrix.length; i++) {
             const element = matrix[i];
-            
             
             for (let j = 0; j < element.length; j++) {
                 let element1 = element[j];
@@ -97,8 +96,18 @@ function  maximalRectangle(matrix) {
         
     }
 
+// console.log(maximalRectangle(
+//     [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]));
+
+
 console.log(maximalRectangle(
-    [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]));
+    [
+        ["1","0","1","0","0"],
+        ["1","0","1","1","1"],
+        ["1","1","1","1","1"],["1","0","0","1","0"]
+    ]));
+
+
 
 
 
@@ -119,3 +128,38 @@ console.log(maximalRectangle(
 
 
 // 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *****************************************************************************
+// |1 0 1 0|         |0 1 0 1|              
+// |1 1 1 1| (vs/vs) |0 0 0 0|           
+// |1 1 1 1|         |0 0 0 0|             
+// *****************************************************************************
+
+
+
