@@ -1,0 +1,120 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+//  */
+// var secondGreaterElement = function(nums) {
+//     //  find first greater and then find second grather for every posbile element 
+// //  means we need to used thre two stacks
+
+//    let stack1= []
+//    let stack2 = [] 
+//    let result = new Array(nums.length).fill(-1)
+
+//    for(let i=0; i<nums.length; i++){
+//         while(stack2.length > 0 && nums[stack2[stack2.length -1]] < nums[i]){
+//         //    
+//         let idx = stack2.pop()
+//         result[idx] = nums[i]  
+
+//         }
+         
+//         // move resolve first greather element stack1 to stack2
+//         let temp= [ ]
+//         while(stack1.length > 0 && nums[stack1[stack1.length -1 ]] < nums[i]){
+//                 let first_greater = stack1.pop()
+//                     // i can not pass into dirsctly in the stack 2 we need to maintain order    
+//                 temp.push(first_greater)   
+//         }
+
+//         // maintain the order for  stack2
+//         while (temp.length  > 0){
+//              let idx = temp.pop()
+//              stack2.push(idx)
+//         }
+         
+//          stack1.push(i)  // push index
+//    }     
+//     return result
+// };
+
+
+
+// console.log(secondGreaterElement([2,4,0,9,6]));
+
+
+// i store the element for which have not found the first greater
+// when we get the greather we resolve those who are waiting  and then move on the stack2
+
+// stack2 check if there are greather element from my stack to reolve them and put it the answer`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************** preactice *********************************************!SECTION
+
+
+// first nwe need to find first greather reolve elements (FOR EVERY ELEMENT) during resolve elements  you can pass to stack2 for waiting the second greater element  
+
+function secondGreaterElement(nums) {
+    let result= new Array(nums.length).fill(-1);
+    let stack1=[]  // they haavend found first greather
+    let stack2=[] //      they have not  found second greater
+
+    for (let index = 0; index < nums.length; index++) {
+        const element = nums[index];
+
+        while (stack2.length >  0  &&  nums[stack2[stack2.length -1]]  <  element) {
+            let idx =  stack2.pop()     
+            result[idx] =  element
+        }
+        
+//       stack1 --->stack2
+        let temp = [ ]
+        while (stack1.length > 0  &&  nums[stack1[stack1.length -1]]  <  element) {
+             let idx =   stack1.pop()
+               temp.push(idx)
+        }
+
+        // miaintain order 
+        while (temp.length >  0) {
+             stack2.push(temp.pop())
+        }
+          
+
+
+        stack1.push(index)        
+    }
+    return  result
+
+}
+ 
+
+console.log(secondGreaterElement([2,4,0,9,6]));
