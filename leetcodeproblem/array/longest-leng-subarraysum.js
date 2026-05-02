@@ -85,20 +85,19 @@ const longestSubarrayEqualSum = (arr,k)=>{
     let hashmap = new Map();
     let  sum =  0 
     // [10, 5, 2, 7, 1, -10] ,k =15
+    // you can do two way :  prefbefre - current prev
+    // simple as that  :
+    //  prefBefrore = currentprev -  k 
     for(let i=0; i<arr.length; i++){
-         sum+=arr[i]
-         hashmap.set(sum,i)
-        //  10,15,17,24,25,15    
-         if(sum == k){
-              max= i+ 1
-         }else{
-             if (hashmap.has(sum -k) ) {
-                 let val = hashmap.get(sum- k)
-                 max = Math.max(max,i - val)
-             }
-         }
-
-         
+        sum+= arr[i] 
+        hashmap.set(sum,i) 
+        if (sum == k) {
+            max= i+ 1
+        }else{
+             if (hashmap.get(sum - k )) {
+                max = Math.max(max,i-hashmap.get(sum -k))
+             }    
+        }
     }
    return max
  }
