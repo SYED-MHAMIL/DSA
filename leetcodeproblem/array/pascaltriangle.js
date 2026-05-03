@@ -165,8 +165,39 @@ function PrintPascalTriangle(N) {
 //    and space compexity  =  O(1)
 }
 
-console.log(PrintPascalTriangle(5));
+// console.log(PrintPascalTriangle(5));
 
 
 
+// var generate = function(numRows) {
+//     let res = [ ]
+//     for(let i=0; i<numRows; i++){
+//         let arr= new Array(i+1).fill(1);
+//         for(let j=1; j<arr.length -1; j++){
+//             if(i>j){
+//                 console.log(res);
+                
+//                 arr[j] = res[i-1][j-1] + res[i-1][j] 
+//             }
+//         }
+//         arr.push(arr)
+//     }
+//     return res
+// };
 
+// console.log(generate(5));
+
+
+var generate = function(numRows) {
+    let res = [] 
+    for(let i=0; i<numRows; i++){
+        let arr= new Array(i+1).fill(1)
+        for(let j=1;j <arr.length -1; j++){
+               if(i > j){
+                  arr[j]= res[i-1][j-1]  + res[i-1][j+1]
+               }
+        }
+        res.push(arr)
+    }
+    return res
+};
