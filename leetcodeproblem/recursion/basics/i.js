@@ -194,7 +194,7 @@ function  sum(n) {
     return n + sum(n-1) 
 }
 
-console.log(sum(3))
+// console.log(sum(3))
 
 // sum(3) -> sum(2) -> sum(1)
 // 3 <------- 2 <------- 1
@@ -202,3 +202,120 @@ console.log(sum(3))
 
 //  3 + sum(2) => 3+3 => 6
 //  2 + sum(1) => 2+1 => 3
+
+
+
+
+
+
+
+
+
+
+
+// *************************************************************
+//   =============       SUM OF N NATURAL NUMBER       ==============
+//*************************************************************
+
+function sumOfN(n,sum) {
+    if(n < 1){
+      console.log(sum);
+      return ;
+    }
+    sumOfN(n-1,sum+n)
+}
+// sumOfN(3,0)
+
+
+function sumOfNFunctionWay(n) {
+    if (n<1) {
+        return 0;
+    }
+
+    return n + sumOfNFunctionWay(n-1)
+}
+
+// console.log(sumOfNFunctionWay(3))
+//  3 + sumOfNFunctionWay(3-1) return 6
+//  2 + sumOfNFunctionWay(2-1) return 3
+//  1 + sumOfNFunctionWay(1-1) return 1 
+//  0+ sumOfNFunctionWay(0-1)  return 0
+// ;
+
+
+
+
+
+
+
+// *************************************************************
+//   =========      FACTORIAL OF N NATURAL NUMBER     =========
+//**************************************************************
+
+function factParamitixed(n,fact=1) {
+    if (n == 0) {
+        console.log(fact);
+        return;
+    }
+    factParamitixed(n-1,fact * n)
+}
+// factParamitixed(4)
+
+
+
+
+// **************************************************
+    //   factorial by using fact function recursion
+// **************************************************
+
+
+function factFunc(n) {
+    if (n == 0) {
+
+        return 1;
+    }
+    return  n * factFunc(n-1)
+}
+console.log(factFunc(5))
+
+
+
+
+
+
+// **************************************************
+    //   getting reverse even array from N by using recursion
+// **************************************************
+
+// s => [1,2,3,4,5,6]  , ans => [6,4,2]
+
+function  even(N) {
+    if(N == 0){
+     return  []
+    }
+    if (N%2 != 0) {
+        let check =  even(N-1)
+        console.log("check",check);
+        return [...check]
+        
+    }
+    return [N,...even(N-1)]
+}
+
+// console.log(even(20))
+
+
+// take out odd ones
+
+function  odd(n) {
+    if(n == 0 ){
+     return []
+    }
+   if (n%2 == 0) {
+       let s= [...odd(n-1)]
+      
+    }
+   return [n,...odd(n-1)]
+
+}
+console.log(odd(3));
