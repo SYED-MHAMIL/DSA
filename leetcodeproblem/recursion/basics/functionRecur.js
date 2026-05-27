@@ -11,8 +11,8 @@ function  reverseArray(arr,start, end) {
     return arr
 };
 let array =  [1,2,3,4,5,6]
-console.log(reverseArray(array,0,array.length -1) 
-)
+// console.log(reverseArray(array,0,array.length -1) 
+// )
 
 //  how its working ? 
 // 1. we are calling reverseArray function with arr value which is [1,2,3], start value which is 0 and end value which is 2
@@ -47,3 +47,76 @@ console.log(reverseArray(array,0,array.length -1)
   
 
 // done it ...
+
+
+
+
+
+function isAlpha(ch) {
+    return (
+        (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')
+    )
+}
+
+
+
+
+ //  check if the string is palindrome or not
+function isPale(str,start,end) {
+    if (start >= end) {
+        return true
+    }
+    if (!isAlpha(str[start])) {
+        return isPale(str,start+1,end)
+    }
+
+    if (!isAlpha(str[end])) {
+        return isPale(str,start,end-1)
+    }
+    
+
+    if (str[start].toLowerCase() !== str[end].toLowerCase()) {
+        
+        return false
+    }
+    return isPale(str,start+1,end-1)    
+    }
+let str = "@3MADAM;?////"
+let is = isPale(str,0,str.length -1)
+// console.log({is});
+
+// if (is) {
+//     console.log('YES ! its palendrom');
+    
+// }else{
+//     console.log('NO its not palendrom');
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fibonacci numbres
+
+
+function fibonacciN(n) {
+    if (n <= 1) {
+        return n;
+    }
+    let first =fibonacciN(n-1);
+    let last=  fibonacciN(n-2) 
+    return  first+last
+    
+}
+console.log(fibonacciN(3));
+// 0+1+2
