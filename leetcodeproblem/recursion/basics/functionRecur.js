@@ -113,9 +113,9 @@ function fibonacciN(n) {
     if (n <= 1) {
         return n;
     }
-    let first =fibonacciN(n-1);
     let last=  fibonacciN(n-2) 
-    return  first+last
+    let slast =fibonacciN(n-1);
+    return  last+slast
     
 }
 console.log(fibonacciN(3));
