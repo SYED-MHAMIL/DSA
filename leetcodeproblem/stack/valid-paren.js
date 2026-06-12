@@ -7,7 +7,7 @@ var isValid = function(s) {
     let open  = {
         ")" :"(",
          "}" : "{",
-         "]": "{"
+         "]": "["
     } 
     for(c of s){
         if(open[c]){

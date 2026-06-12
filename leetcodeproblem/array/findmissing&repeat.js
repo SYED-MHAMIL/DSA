@@ -14,19 +14,23 @@
 //         const element = nums[i];
 //         freqs[element]++;
 //     }  
-//     console.log(freqs);
+//     // console.log(freqs);
     
 //     for (let i = 1; i < freqs.length; i++) {
 //         // const element = nums[i];
 //         if (freqs[i] == 2) {
 //               repeating = i
-//         }else{
+//         }
+//         if(freqs[i] == 0){
 //            missing = i 
 //         }      
 //     }
+//     console.log({repeating,missing});
+    
 //     return [repeating,missing]  
        
-// } 
+// }
+// findMissingAndRepetiveNumber([3,1,2,5,3]) 
 //  the missing number
 
 
@@ -64,14 +68,9 @@
 // }
 
 
-function findMissingAndRepetiveNumber(nums) {
-  let missing,duplicate;
-  
-  
 
-return [duplicate,missing]
+//
 
-}
-  
 
-console.log(findMissingAndRepetiveNgfumber([3,1,3]));
+
+

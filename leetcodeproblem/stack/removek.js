@@ -17,10 +17,11 @@ var removeKdigits = function(num, k) {
         stack.pop()
              count++
       }
+      
        
-   let result = stack.join("").replace(/^0+/, "");
+      let result = stack.join("").replace(/^0+/, "");
 
-    return result === "" ? "0" : result;
+      return result === "" ? "0" : result;
 };
 }
 console.log(removeKdigits(num = "33526221184202197273", k = 19))
